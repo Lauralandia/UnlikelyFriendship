@@ -1,0 +1,112 @@
+[gd_scene load_steps=5 format=3 uid="uid://slnost8kvf5"]
+
+[ext_resource type="Texture2D" uid="uid://b5t4cfjevsr0x" path="res://Sprites/UI/purple_button_unpressed.png" id="2_x48kh"]
+[ext_resource type="Texture2D" uid="uid://rjjrffsvyli3" path="res://Sprites/UI/purple_button_pressed.png" id="3_35lxb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqkwx"]
+bg_color = Color(0.128894, 0.00427854, 0.100474, 1)
+
+[sub_resource type="Theme" id="Theme_a2kr7"]
+
+[node name="mainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -425.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xqkwx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_a2kr7")
+theme_override_constants/separation = 10
+
+[node name="NewGame" type="TextureButton" parent="ColorRect/PanelContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_x48kh")
+texture_pressed = ExtResource("3_35lxb")
+texture_hover = ExtResource("3_35lxb")
+
+[node name="NewGameLabel" type="Label" parent="ColorRect/PanelContainer/VBoxContainer/NewGame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -11.5
+offset_right = 42.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "New Game"
+
+[node name="Settings" type="TextureButton" parent="ColorRect/PanelContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_x48kh")
+texture_pressed = ExtResource("3_35lxb")
+texture_hover = ExtResource("3_35lxb")
+
+[node name="SettingsLabel" type="Label" parent="ColorRect/PanelContainer/VBoxContainer/Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -11.5
+offset_right = 42.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Settings
+"
+
+[node name="ExitGame" type="TextureButton" parent="ColorRect/PanelContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_x48kh")
+texture_pressed = ExtResource("3_35lxb")
+texture_hover = ExtResource("3_35lxb")
+
+[node name="ExitGameLabel" type="Label" parent="ColorRect/PanelContainer/VBoxContainer/ExitGame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -11.5
+offset_right = 42.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Exit Game
+"
