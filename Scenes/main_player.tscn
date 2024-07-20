@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://dop3vw5fgx8yq"]
+
+[ext_resource type="Script" path="res://Scripts/mainPlayer.gd" id="1_hgcsq"]
+[ext_resource type="Texture2D" uid="uid://csu0tiu78as1q" path="res://Sprites/CharModel/p1_spritesheet.png" id="2_vw43k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0ae3"]
+atlas = ExtResource("2_vw43k")
+region = Rect2(72, 0, 72, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7ybk"]
+atlas = ExtResource("2_vw43k")
+region = Rect2(360, 0, 72, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0axsk"]
+atlas = ExtResource("2_vw43k")
+region = Rect2(0, 0, 72, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkllh"]
+atlas = ExtResource("2_vw43k")
+region = Rect2(72, 0, 72, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_322i4"]
+atlas = ExtResource("2_vw43k")
+region = Rect2(144, 0, 72, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8s34"]
+atlas = ExtResource("2_vw43k")
+region = Rect2(216, 0, 72, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jins"]
+atlas = ExtResource("2_vw43k")
+region = Rect2(288, 0, 72, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mt71l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0ae3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7ybk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0axsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkllh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_322i4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8s34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jins")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppkxv"]
+size = Vector2(43, 86)
+
+[node name="mainPlayer" type="CharacterBody2D"]
+position = Vector2(-118, -1472)
+collision_layer = 2
+script = ExtResource("1_hgcsq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mt71l")
+animation = &"idle"
+frame_progress = 0.832228
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 1)
+shape = SubResource("RectangleShape2D_ppkxv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
