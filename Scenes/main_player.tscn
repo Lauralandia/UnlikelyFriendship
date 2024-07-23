@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://Scripts/FallState.gd" id="6_tjdfd"]
 [ext_resource type="Script" path="res://Scripts/DashState.gd" id="9_kmmve"]
 [ext_resource type="Script" path="res://Scripts/WallSlideState.gd" id="10_ll0vd"]
-[ext_resource type="PackedScene" path="res://Scenes/alchemist.tscn" id="12_gs6s0"]
+[ext_resource type="PackedScene" uid="uid://dk3b0e733kltw" path="res://Scenes/alchemist.tscn" id="12_gs6s0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0ae3"]
 atlas = ExtResource("2_vw43k")

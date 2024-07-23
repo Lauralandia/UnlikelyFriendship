@@ -18,10 +18,6 @@ func _ready() -> void:
 	state_machine.init(self)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/main.dialogue"), "start")
-		return
-	
 	state_machine.process_input(event)
 	
 func _physics_process(delta: float) -> void:
