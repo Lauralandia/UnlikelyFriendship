@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/AlcJumpState.gd" id="6_7kbl4"]
 [ext_resource type="Script" path="res://Scripts/AlcFallState.gd" id="7_l0i2a"]
 
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_b7jm5"]
 atlas = ExtResource("2_7pgbu")
 region = Rect2(288, 0, 72, 96)
@@ -74,6 +75,7 @@ animations = [{
 size = Vector2(45, 82)
 
 [node name="Alchemist" type="CharacterBody2D"]
+
 collision_layer = 2
 script = ExtResource("1_40i1n")
 
@@ -117,3 +119,4 @@ move_state = NodePath("../moveState")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -200)
+

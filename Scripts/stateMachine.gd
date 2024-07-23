@@ -2,6 +2,7 @@ extends Node
 
 @export var starting_state: State
 var current_state: State
+
 var alchemist_char =  preload("res://Scenes/alchemist.tscn")
 
 func init(parent: AssassinClass) -> void:
@@ -26,6 +27,7 @@ func process_input(event: InputEvent) -> void:
 		#new_char.global_position = get_parent().global_position
 		#get_parent().get_parent().add_child(new_char)
 		#get_parent().queue_free()
+
 	
 	var new_state = current_state.process_input(event)
 	if new_state:

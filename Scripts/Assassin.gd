@@ -1,3 +1,4 @@
+
 class_name AssassinClass
 extends CharacterBody2D
 
