@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dop3vw5fgx8yq"]
+[gd_scene load_steps=32 format=3 uid="uid://dop3vw5fgx8yq"]
 
 [ext_resource type="Script" path="res://Scripts/Assassin.gd" id="1_v6a35"]
 [ext_resource type="Texture2D" uid="uid://bxwp73iu876uj" path="res://Sprites/CharModel/dash_sprite1.png" id="2_6hy1s"]
@@ -11,7 +11,8 @@
 [ext_resource type="Script" path="res://Scripts/FallState.gd" id="6_tjdfd"]
 [ext_resource type="Script" path="res://Scripts/DashState.gd" id="9_kmmve"]
 [ext_resource type="Script" path="res://Scripts/WallSlideState.gd" id="10_ll0vd"]
-[ext_resource type="PackedScene" uid="uid://dk3b0e733kltw" path="res://Scenes/alchemist.tscn" id="12_gs6s0"]
+[ext_resource type="Texture2D" uid="uid://cg34s4bkltbxv" path="res://Sprites/CharModel/p3_spritesheet.png" id="12_l1emp"]
+[ext_resource type="Script" path="res://Scripts/Alchemist.gd" id="12_y3mx8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0ae3"]
 atlas = ExtResource("2_vw43k")
@@ -93,6 +94,71 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ppkxv"]
 size = Vector2(43, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7jm5"]
+atlas = ExtResource("12_l1emp")
+region = Rect2(288, 0, 72, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt6pl"]
+atlas = ExtResource("12_l1emp")
+region = Rect2(360, 0, 72, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nafdg"]
+atlas = ExtResource("12_l1emp")
+region = Rect2(216, 96, 72, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgq50"]
+atlas = ExtResource("12_l1emp")
+region = Rect2(0, 0, 72, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uflep"]
+atlas = ExtResource("12_l1emp")
+region = Rect2(72, 0, 72, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gk54b"]
+atlas = ExtResource("12_l1emp")
+region = Rect2(144, 0, 72, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_785nh"]
+atlas = ExtResource("12_l1emp")
+region = Rect2(216, 0, 72, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tikkg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7jm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt6pl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nafdg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgq50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uflep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gk54b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_785nh")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ouw8"]
+size = Vector2(45, 82)
 
 [node name="mainPlayer" type="Node"]
 
@@ -178,6 +244,54 @@ move_state = NodePath("../MoveState")
 dash_state = NodePath("../DashState")
 fall_state = NodePath("../FallState")
 
-[node name="Alchemist" parent="." instance=ExtResource("12_gs6s0")]
+[node name="Alchemist" type="CharacterBody2D" parent="."]
+visible = false
+script = ExtResource("12_y3mx8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Alchemist"]
+sprite_frames = SubResource("SpriteFrames_tikkg")
+animation = &"idle"
+frame = 2
+frame_progress = 0.821674
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Alchemist"]
+position = Vector2(3.5, 8)
+shape = SubResource("RectangleShape2D_3ouw8")
+
+[node name="stateMachine" type="Node" parent="Alchemist" node_paths=PackedStringArray("starting_state")]
+script = ExtResource("3_gpd0y")
+starting_state = NodePath("../../Assassin/stateMachine/IdleState")
+
+[node name="IdleState" type="Node" parent="Alchemist/stateMachine" node_paths=PackedStringArray("fall_state", "jump_state", "move_state", "dash_state", "wall_slide_state")]
+script = ExtResource("4_7i5xq")
+fall_state = NodePath("../../../Assassin/stateMachine/FallState")
+jump_state = NodePath("../../../Assassin/stateMachine/JumpState")
+move_state = NodePath("../../../Assassin/stateMachine/MoveState")
+dash_state = NodePath("../../../Assassin/stateMachine/DashState")
+wall_slide_state = NodePath("../../../Assassin/stateMachine/WallSlideState")
+
+[node name="MoveState" type="Node" parent="Alchemist/stateMachine" node_paths=PackedStringArray("fall_state", "idle_state", "jump_state", "dash_state", "wall_slide_state")]
+script = ExtResource("5_luef7")
+fall_state = NodePath("../../../Assassin/stateMachine/FallState")
+idle_state = NodePath("../../../Assassin/stateMachine/IdleState")
+jump_state = NodePath("../../../Assassin/stateMachine/JumpState")
+dash_state = NodePath("../../../Assassin/stateMachine/DashState")
+wall_slide_state = NodePath("../../../Assassin/stateMachine/WallSlideState")
+
+[node name="JumpState" type="Node" parent="Alchemist/stateMachine" node_paths=PackedStringArray("fall_state", "idle_state", "move_state", "dash_state", "wall_slide_state")]
+script = ExtResource("5_2aj23")
+fall_state = NodePath("../../../Assassin/stateMachine/FallState")
+idle_state = NodePath("../../../Assassin/stateMachine/IdleState")
+move_state = NodePath("../../../Assassin/stateMachine/MoveState")
+dash_state = NodePath("../../../Assassin/stateMachine/DashState")
+wall_slide_state = NodePath("../../../Assassin/stateMachine/WallSlideState")
+
+[node name="FallState" type="Node" parent="Alchemist/stateMachine" node_paths=PackedStringArray("jump_state", "idle_state", "move_state", "dash_state", "wall_slide_state")]
+script = ExtResource("6_tjdfd")
+jump_state = NodePath("../../../Assassin/stateMachine/JumpState")
+idle_state = NodePath("../../../Assassin/stateMachine/IdleState")
+move_state = NodePath("../../../Assassin/stateMachine/MoveState")
+dash_state = NodePath("../../../Assassin/stateMachine/DashState")
+wall_slide_state = NodePath("../../../Assassin/stateMachine/WallSlideState")
 
 [connection signal="timeout" from="Assassin/slide_timer" to="." method="_on_slide_timer_timeout"]

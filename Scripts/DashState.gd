@@ -6,10 +6,10 @@ extends State
 @export var jump_state: State
 @export var wall_slide_state: State
 
-@export var dash_speed: float = 2000.0
+@export var dash_speed: float = 1500.0
 @onready var dash_timer = $DashTimer
 
-@export var dash_length: float = 0.3
+@export var dash_length: float = 0.2
 
 func enter() -> void:
 	if !is_dashing():
