@@ -22,12 +22,10 @@ func process_physics(delta: float) -> State:
 	if !parent.is_on_floor() and (parent.ray_l.is_colliding() or parent.ray_r.is_colliding):
 		if Input.is_action_pressed('move_left') or Input.is_action_pressed('move_right'):
 			parent.velocity.y += slide_speed * delta
-			#parent.velocity.y = min(parent.velocity.y, slide_speed)
 		else:
 			parent.velocity.y += gravity*delta
 			return fall_state
 	
-	print(parent.velocity.y)	
 	var movement = Input.get_axis('move_left', 'move_right') * move_speed
 	
 	if movement != 0:
