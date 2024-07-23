@@ -6,7 +6,6 @@ var entered = false
 func _on_body_entered(body):
 	entered = true
 
-
 func _on_body_exited(body):
 	entered = false
 	
