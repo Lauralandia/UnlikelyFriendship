@@ -1,11 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://dk3b0e733kltw"]
+[gd_scene load_steps=17 format=3 uid="uid://dk3b0e733kltw"]
 
+[ext_resource type="Script" path="res://Scripts/Alchemist.gd" id="1_40i1n"]
 [ext_resource type="Texture2D" uid="uid://cg34s4bkltbxv" path="res://Sprites/CharModel/p3_spritesheet.png" id="2_7pgbu"]
-[ext_resource type="Script" path="res://Scripts/stateMachine.gd" id="3_27xey"]
-[ext_resource type="Script" path="res://Scripts/IdleState.gd" id="4_6vlsu"]
-[ext_resource type="Script" path="res://Scripts/MoveState.gd" id="5_x7vq6"]
-[ext_resource type="Script" path="res://Scripts/JumpState.gd" id="6_a2tdk"]
-[ext_resource type="Script" path="res://Scripts/FallState.gd" id="7_65agq"]
+[ext_resource type="Script" path="res://Scripts/AlcStateMachine.gd" id="3_aonr1"]
+[ext_resource type="Script" path="res://Scripts/AlcIdleState.gd" id="4_0lvq7"]
+[ext_resource type="Script" path="res://Scripts/AlcMoveState.gd" id="5_lvkvo"]
+[ext_resource type="Script" path="res://Scripts/AlcJumpState.gd" id="6_7kbl4"]
+[ext_resource type="Script" path="res://Scripts/AlcFallState.gd" id="7_l0i2a"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b7jm5"]
 atlas = ExtResource("2_7pgbu")
@@ -73,7 +75,9 @@ animations = [{
 size = Vector2(45, 82)
 
 [node name="Alchemist" type="CharacterBody2D"]
-visible = false
+
+collision_layer = 2
+script = ExtResource("1_40i1n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tikkg")
@@ -85,17 +89,34 @@ frame_progress = 0.821674
 position = Vector2(3.5, 8)
 shape = SubResource("RectangleShape2D_3ouw8")
 
-[node name="stateMachine" type="Node" parent="."]
-script = ExtResource("3_27xey")
+[node name="stateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
+script = ExtResource("3_aonr1")
+starting_state = NodePath("idleState")
 
-[node name="IdleState" type="Node" parent="stateMachine"]
-script = ExtResource("4_6vlsu")
+[node name="idleState" type="Node" parent="stateMachine" node_paths=PackedStringArray("fall_state", "jump_state", "move_state")]
+script = ExtResource("4_0lvq7")
+fall_state = NodePath("../fallState")
+jump_state = NodePath("../jumpState")
+move_state = NodePath("../moveState")
 
-[node name="MoveState" type="Node" parent="stateMachine"]
-script = ExtResource("5_x7vq6")
+[node name="moveState" type="Node" parent="stateMachine" node_paths=PackedStringArray("fall_state", "idle_state", "jump_state")]
+script = ExtResource("5_lvkvo")
+fall_state = NodePath("../fallState")
+idle_state = NodePath("../idleState")
+jump_state = NodePath("../jumpState")
 
-[node name="JumpState" type="Node" parent="stateMachine"]
-script = ExtResource("6_a2tdk")
+[node name="jumpState" type="Node" parent="stateMachine" node_paths=PackedStringArray("fall_state", "idle_state", "move_state")]
+script = ExtResource("6_7kbl4")
+fall_state = NodePath("../fallState")
+idle_state = NodePath("../idleState")
+move_state = NodePath("../moveState")
 
-[node name="FallState" type="Node" parent="stateMachine"]
-script = ExtResource("7_65agq")
+[node name="fallState" type="Node" parent="stateMachine" node_paths=PackedStringArray("jump_state", "idle_state", "move_state")]
+script = ExtResource("7_l0i2a")
+jump_state = NodePath("../jumpState")
+idle_state = NodePath("../idleState")
+move_state = NodePath("../moveState")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -200)
+

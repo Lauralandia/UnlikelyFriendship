@@ -1,5 +1,6 @@
+
+class_name AssassinClass
 extends CharacterBody2D
-class_name Player
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var state_machine = $stateMachine
