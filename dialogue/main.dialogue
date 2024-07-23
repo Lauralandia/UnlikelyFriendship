@@ -1,0 +1,73 @@
+~ intro_cinematic_dialogue
+
+Alchemist: Ah yes, and just a half pinch of wolf's bane.. a dash of witch's wart and two teaspoons of cumin. Mmm yes. \nThis might be our best brew yet, Umbra!
+
+: KNOCK, KNOCK, KNOCK! \n[There's a knock at the door, Umbra shuffles over to answer it.]
+
+Umbra: (unintelligible gargling sounds)
+
+Alchemist: The snail mail is here? 
+Alchemist: [#happy, #surprised] Oh, goodie! I do love mail. I wasn't even expecting anything!
+	Bring it here, bring it here! Hmm, what's this? 
+
+[continues reading, fade to scroll, poor handwriting]
+
+"If life eternal you hope to find, come to the cave at half past five. The eternabloem tales are true, and your fate is awaiting you."
+
+Alchemist: Huzzah! You hear that, Umbra? I told you that I was on to something with those books I was reading last moon. Oh, a real Eternabloem, can you imagine? The time! Umbra, quick, there's no time to waste!
+
+Umbra: (unintelligible gargling sounds)
+
+Alchemist: Soup night will have to wait, Umbra! It's already after five. We need to get to the cave now!
+
+Umbra: (disapproving gargling sounds)
+
+Alchemist: Don't be ridiculous. If the eternabloem is in there, we're going in. Now hurry up. before someone beats us to it!
+
+# CAVE_ENTRANCE_DIALOGUE STARTS
+
+[Alchemist and Umbra head over to the cave entrance, suddenly there's a loud thud]
+
+Alchemist: [#surprised] What?! Who goes there?!
+
+# Umbra disappears off scene
+[Out of the darkness - assassin emerges]
+
+Alchemist: Agha-what are you doing here? 
+	[Gasp] Are you coming for the Eternabloem?!
+
+Assassin: ...No. I don't think so.
+
+# Cave rumbling ensues, rocks fall cave crashes
+
+Assassin: [#scared, #surprised] Wha-whoa! Lookout!
+
+# Transition to first level
+
+Alchemist: Wait! Where did Umbra go?
+	On no! He was trapped inside!
+	His poor little body must have been crushed in all that rubble.
+	Poor, poor Umbra. Poor-
+
+[Bell rings in the far distance]
+
+Alchemist: Wait! Did you hear that?
+
+Assassin: Sure did, I am standing directly beside you. It means something to you?
+
+Alchemist: That's Umbra's stress bell. I'd recognize it anywhere!
+
+Assassin: ...So, he's not in the cave? It looks like there was a struggle out here though, look at these marks.
+
+Alchemist: [#surprised] Egat! 
+	Someone has kidnapped Umbra! 
+	The letter for the Eternabloem must have been a dastardly ploy...
+
+Assassin: I'm still not sure what that is, but if you need help finding your weird shadow cat gremlin thing, I can help. I'm quick and great at tracking.
+
+Alchemist: [#excited] Yes, there's not a moment to lose!
+
+Assassin: [#disappointed] ...Wrong way...
+
+
+=> END
