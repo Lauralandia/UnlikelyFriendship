@@ -154,7 +154,7 @@ idle_state = NodePath("../idleState")
 move_state = NodePath("../moveState")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -200)
+position = Vector2(0, -150)
 
 [node name="StrTimer" type="Timer" parent="."]
 one_shot = true

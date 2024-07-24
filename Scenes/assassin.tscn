@@ -1,14 +1,14 @@
 [gd_scene load_steps=34 format=3 uid="uid://dgvkw401feqp7"]
 
 [ext_resource type="Script" path="res://Scripts/Assassin.gd" id="1_gxmrk"]
-[ext_resource type="Texture2D" uid="uid://dxain2jp5cijv" path="res://Art/Assassin_dash2.png" id="2_55oqt"]
+[ext_resource type="Texture2D" uid="uid://bey0fad3q7ry6" path="res://Art/Assassin_dash2.png" id="2_55oqt"]
 [ext_resource type="Texture2D" uid="uid://c1kawn63q6sea" path="res://Art/Assassin_idle.png" id="3_fapau"]
-[ext_resource type="Texture2D" uid="uid://bg5eluh7o84ow" path="res://Art/Assassin_fall.png" id="3_qr23c"]
+[ext_resource type="Texture2D" uid="uid://dvvwpwdr2d5rc" path="res://Art/Assassin_fall.png" id="3_qr23c"]
 [ext_resource type="Texture2D" uid="uid://cqru37iogtqpw" path="res://Art/Assassin_run.png" id="4_7e3ce"]
-[ext_resource type="Texture2D" uid="uid://d3ic1t17blyed" path="res://Art/Assassin_jump.png" id="5_1fqsu"]
+[ext_resource type="Texture2D" uid="uid://cgwt8p5s611cj" path="res://Art/Assassin_jump.png" id="5_1fqsu"]
 [ext_resource type="Script" path="res://Scripts/stateMachine.gd" id="6_smycw"]
 [ext_resource type="Texture2D" uid="uid://b18fjeuvymjk4" path="res://Art/smoke_change.png" id="6_xqdpq"]
-[ext_resource type="Texture2D" uid="uid://csq6eiwly0ko8" path="res://Art/Assassin_wallslide.png" id="7_0mq2j"]
+[ext_resource type="Texture2D" uid="uid://da2cgwc5r7r81" path="res://Art/Assassin_wallslide.png" id="7_0mq2j"]
 [ext_resource type="Script" path="res://Scripts/IdleState.gd" id="7_imffk"]
 [ext_resource type="Script" path="res://Scripts/MoveState.gd" id="8_p6ksj"]
 [ext_resource type="Script" path="res://Scripts/JumpState.gd" id="9_js2wj"]
@@ -253,4 +253,4 @@ dash_state = NodePath("../DashState")
 fall_state = NodePath("../FallState")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -200)
+position = Vector2(0, -150)

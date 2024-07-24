@@ -7,9 +7,9 @@ var level_one =  preload("res://Scenes/level_one.tscn")
 var paused = false
 
 func _ready():
-	$mainPlayer/Assassin/Camera2D.limit_top = -830
-	$mainPlayer/Assassin/Camera2D.limit_right = 3500
-	$mainPlayer/Assassin/Camera2D.limit_left = -420
+	#$mainPlayer/Assassin/Camera2D.limit_top = -830
+	#$mainPlayer/Assassin/Camera2D.limit_right = 3500
+	#$mainPlayer/Assassin/Camera2D.limit_left = -420
 	assassin_player.global_position.y = 0
 	assassin_player.global_position.x = 0
 
