@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvvwpwdr2d5rc"
-path="res://.godot/imported/Assassin_fall.png-7832ccfdc4e791de72f12afc58857f43.ctex"
+uid="uid://kbox8i6qreo8"
+path="res://.godot/imported/str_glow_2.png-50759993883ee950390599cd3202e013.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Assassin_fall.png"
-dest_files=["res://.godot/imported/Assassin_fall.png-7832ccfdc4e791de72f12afc58857f43.ctex"]
+source_file="res://Sprites/CharModel/str_glow_2.png"
+dest_files=["res://.godot/imported/str_glow_2.png-50759993883ee950390599cd3202e013.ctex"]
 
 [params]
 
