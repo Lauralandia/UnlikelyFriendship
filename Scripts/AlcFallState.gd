@@ -7,7 +7,7 @@ extends AlcState
 @export var jump_force: float = 900.0
 
 func enter() -> void:
-	parent.animated_sprite.play("idle")
+	parent.animated_sprite.play("fall")
 	
 func process_physics(delta: float) -> AlcState:		
 		

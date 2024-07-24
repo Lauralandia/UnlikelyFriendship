@@ -8,6 +8,7 @@ extends AlcState
 
 func enter() -> void:
 	super()
+	parent.animated_sprite.play("jump")
 	parent.velocity.y = -jump_force
 
 func process_physics(delta: float) -> AlcState:
