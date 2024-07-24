@@ -20,13 +20,6 @@ func process_physics(delta: float)-> void:
 		change_state(new_state)
 	
 func process_input(event: InputEvent) -> void:
-	#if Input.is_action_just_pressed("switch_character"):
-		#var current_pos = get_parent().global_position
-		#get_parent().queue_free()
-		#var new_char = assassin_char.instantiate()
-		#new_char.global_position = current_pos		
-		#get_parent().get_parent().add_child(new_char)
-		
 	var new_state = current_state.process_input(event)
 	if new_state:
 		change_state(new_state)

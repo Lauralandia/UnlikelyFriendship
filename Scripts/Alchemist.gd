@@ -21,13 +21,9 @@ func _ready() -> void:
 	state_machine.init(self)
 
 func _unhandled_input(event: InputEvent) -> void:
-
-	#if Input.is_action_just_pressed("switch_character"):
-		#assassin.global_position = self.global_position
-		#assassin_cam.make_current()
-		#self.global_position.x = 0
-		#self.global_position.y = 0
 	if Input.is_action_just_pressed("skill_one") && str_timer.time_left == 0:
+		animated_sprite.play("drink_str")
+		await(get_tree().create_timer(0.5).timeout)
 		str_active = true
 		str_sprite.visible = true
 		str_sprite.play("str")
