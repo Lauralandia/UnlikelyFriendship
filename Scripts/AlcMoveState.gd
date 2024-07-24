@@ -4,7 +4,6 @@ extends AlcState
 @export var idle_state: AlcState
 @export var jump_state: AlcState
 
-
 func process_input(event: InputEvent) -> AlcState:
 	if Input.is_action_just_pressed('jump') and parent.is_on_floor():
 		return jump_state
@@ -26,6 +25,12 @@ func process_physics(delta: float) -> AlcState:
 	parent.velocity.x = movement
 	parent.move_and_slide()
 	
+	if parent.str_active == true:
+		for i in parent.get_slide_collision_count():
+			var c = parent.get_slide_collision(i)
+			if c.get_collider() is RigidBody2D:
+				c.get_collider().apply_central_impulse(-c.get_normal()*80.0)
+				
 	if !parent.is_on_floor():
 		return fall_state
 	return null

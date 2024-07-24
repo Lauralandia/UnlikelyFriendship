@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< Updated upstream
-uid="uid://u1tts4n1c8jx"
-=======
-uid="uid://csq6eiwly0ko8"
->>>>>>> Stashed changes
-path="res://.godot/imported/Assassin_wallslide.png-5cf4cac844f90c89eb7f7776fcaea7d4.ctex"
+uid="uid://bnnbq1s2d4nfk"
+path="res://.godot/imported/str_glow_1.png-67c8e18db91c3941bafe8fdfb7f2110d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Assassin_wallslide.png"
-dest_files=["res://.godot/imported/Assassin_wallslide.png-5cf4cac844f90c89eb7f7776fcaea7d4.ctex"]
+source_file="res://Sprites/CharModel/str_glow_1.png"
+dest_files=["res://.godot/imported/str_glow_1.png-67c8e18db91c3941bafe8fdfb7f2110d.ctex"]
 
 [params]
 

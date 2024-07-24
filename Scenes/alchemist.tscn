@@ -1,12 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://dk3b0e733kltw"]
+[gd_scene load_steps=23 format=3 uid="uid://dk3b0e733kltw"]
 
 [ext_resource type="Script" path="res://Scripts/Alchemist.gd" id="1_40i1n"]
 [ext_resource type="Texture2D" uid="uid://cg34s4bkltbxv" path="res://Sprites/CharModel/p3_spritesheet.png" id="2_7pgbu"]
 [ext_resource type="Script" path="res://Scripts/AlcStateMachine.gd" id="3_aonr1"]
+[ext_resource type="Texture2D" uid="uid://b18fjeuvymjk4" path="res://Art/smoke_change.png" id="3_uv4a6"]
 [ext_resource type="Script" path="res://Scripts/AlcIdleState.gd" id="4_0lvq7"]
 [ext_resource type="Script" path="res://Scripts/AlcMoveState.gd" id="5_lvkvo"]
 [ext_resource type="Script" path="res://Scripts/AlcJumpState.gd" id="6_7kbl4"]
 [ext_resource type="Script" path="res://Scripts/AlcFallState.gd" id="7_l0i2a"]
+[ext_resource type="Texture2D" uid="uid://bnnbq1s2d4nfk" path="res://Sprites/CharModel/str_glow_1.png" id="9_5122l"]
+[ext_resource type="Texture2D" uid="uid://kbox8i6qreo8" path="res://Sprites/CharModel/str_glow_2.png" id="10_heceg"]
+[ext_resource type="Texture2D" uid="uid://1xotd8q55p7e" path="res://Sprites/CharModel/str_glow_3.png" id="11_oxahg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b7jm5"]
 atlas = ExtResource("2_7pgbu")
@@ -19,6 +23,10 @@ region = Rect2(360, 0, 72, 96)
 [sub_resource type="AtlasTexture" id="AtlasTexture_nafdg"]
 atlas = ExtResource("2_7pgbu")
 region = Rect2(216, 96, 72, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n11j"]
+atlas = ExtResource("3_uv4a6")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgq50"]
 atlas = ExtResource("2_7pgbu")
@@ -54,6 +62,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_2n11j")
+}],
+"loop": true,
+"name": &"transition",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_vgq50")
 }, {
 "duration": 1.0,
@@ -73,15 +89,37 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ouw8"]
 size = Vector2(45, 82)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_8eiyb"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"non_str",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_5122l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_heceg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_oxahg")
+}],
+"loop": true,
+"name": &"str",
+"speed": 10.0
+}]
+
 [node name="Alchemist" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 5
+floor_max_angle = 1.0472
 script = ExtResource("1_40i1n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tikkg")
-animation = &"idle"
-frame = 2
-frame_progress = 0.821674
+animation = &"walking"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, 8)
@@ -117,3 +155,14 @@ move_state = NodePath("../moveState")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -200)
+
+[node name="StrTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Str_Sprite" type="AnimatedSprite2D" parent="."]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_8eiyb")
+animation = &"non_str"
+autoplay = "non_str"
+
+[connection signal="timeout" from="StrTimer" to="." method="_on_str_timer_timeout"]

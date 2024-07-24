@@ -1,15 +1,15 @@
 extends Node2D
 @onready var main_player = $mainPlayer
 @onready var assassin_player = $mainPlayer/Assassin
-@onready var pause_menu = $CanvasLayer/PauseMenu
-var level_one =  preload("res://Scenes/level_one.tscn")
 
+var level_three =  preload("res://Scenes/level_three.tscn")
 var paused = false
+@onready var pause_menu = $CanvasLayer/PauseMenu
 
 func _ready():
-	$mainPlayer/Assassin/Camera2D.limit_top = -830
-	$mainPlayer/Assassin/Camera2D.limit_right = 3500
-	$mainPlayer/Assassin/Camera2D.limit_left = -420
+	#$mainPlayer/Assassin/Camera2D.limit_top = -1900
+	#$mainPlayer/Assassin/Camera2D.limit_right = 1400
+	#$mainPlayer/Assassin/Camera2D.limit_left = -500
 	assassin_player.global_position.y = 0
 	assassin_player.global_position.x = 0
 
@@ -28,6 +28,6 @@ func pauseMenu():
 
 func restartLevel():
 	queue_free()
-	var game_scene = level_one.instantiate()
+	var game_scene = level_three.instantiate()
 	get_parent().add_child(game_scene)
 	Engine.time_scale = 1

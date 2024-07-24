@@ -15,6 +15,7 @@ func process_input(event: InputEvent) -> State:
 
 func process_physics(delta: float) -> State:
 	parent.velocity.y += gravity * delta
+	#parent.velocity.y = move_and_slide(velocity, FLOOR_NORMAL, true).y
 	parent.animated_sprite.play("walking")
 		
 	if Input.is_action_just_pressed('move_left') and Input.is_action_just_pressed('move_right'):

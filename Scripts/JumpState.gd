@@ -10,6 +10,7 @@ extends State
 
 func enter() -> void:
 	super()
+	parent.animated_sprite.play("jump")
 	parent.velocity.y = -jump_force
 	
 func process_input(event: InputEvent) -> State:

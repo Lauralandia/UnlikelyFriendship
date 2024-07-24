@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://b4lubwrv7c7ii"
+=======
+uid="uid://d3ic1t17blyed"
+>>>>>>> Stashed changes
 path="res://.godot/imported/Assassin_jump.png-7665a0ea5e8b4795c70f8f17d986b56f.ctex"
 metadata={
 "vram_texture": false
