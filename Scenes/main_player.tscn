@@ -8,3 +8,6 @@ process_physics_priority = 1
 script = ExtResource("1_5oly2")
 
 [node name="Assassin" parent="." instance=ExtResource("1_or08t")]
+
+[node name="trans_cd" type="Timer" parent="."]
+one_shot = true
