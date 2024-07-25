@@ -136,7 +136,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yi1tk")
 }],
-"loop": true,
+"loop": false,
 "name": &"transition",
 "speed": 5.0
 }, {
@@ -188,7 +188,7 @@ target_position = Vector2(15, 0)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_mt71l")
-animation = &"wall_slide"
+animation = &"transition"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 3.5)

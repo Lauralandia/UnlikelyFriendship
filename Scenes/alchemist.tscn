@@ -106,7 +106,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cn8my")
 }],
-"loop": true,
+"loop": false,
 "name": &"fall",
 "speed": 5.0
 }, {
@@ -139,7 +139,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2n11j")
 }],
-"loop": true,
+"loop": false,
 "name": &"transition",
 "speed": 5.0
 }, {
@@ -195,11 +195,10 @@ script = ExtResource("1_40i1n")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_tikkg")
-animation = &"drink_str"
-frame = 4
-frame_progress = 1.0
+animation = &"transition"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-0.5, 2.25)
 shape = SubResource("RectangleShape2D_3ouw8")
 
