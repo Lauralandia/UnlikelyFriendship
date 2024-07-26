@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://nn2ymuibp7ws"
+path="res://.godot/imported/No way.mp3-91ea822f3eeba063d83bc49d1c337ee5.mp3str"
+
+[deps]
+
+source_file="res://Sounds/No way.mp3"
+dest_files=["res://.godot/imported/No way.mp3-91ea822f3eeba063d83bc49d1c337ee5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
