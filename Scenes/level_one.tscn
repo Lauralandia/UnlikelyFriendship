@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://2ho7mayqxe2y" path="res://Art/Background/Cave_outside_rocks_fg.png" id="3_tc81c"]
 [ext_resource type="Texture2D" uid="uid://bti2cu7fnbwuq" path="res://Art/TilemapMaster.png" id="4_knlia"]
 [ext_resource type="Script" path="res://Scripts/DoorTrigger.gd" id="6_adwts"]
+[ext_resource type="Texture2D" uid="uid://cu1iwpa13o64d" path="res://Art/Rock.png" id="6_c1is1"]
 [ext_resource type="PackedScene" uid="uid://dh4or5f6nnouc" path="res://Scenes/pause_menu.tscn" id="7_rpu5m"]
-[ext_resource type="Texture2D" uid="uid://dku3co8fki5dl" path="res://Sprites/Objects/weight.png" id="8_drmbd"]
 [ext_resource type="PackedScene" uid="uid://bipykb5h0gmvh" path="res://Scenes/killzone.tscn" id="9_iabg2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6b78x"]
@@ -76,13 +76,13 @@ sources/0 = SubResource("TileSetAtlasSource_6b78x")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxwuo"]
 size = Vector2(76, 113)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4ie6"]
-size = Vector2(269, 239)
+[sub_resource type="CircleShape2D" id="CircleShape2D_5y6hf"]
+radius = 141.014
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a6i1j"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4a7m"]
-size = Vector2(200, 169)
+[sub_resource type="CircleShape2D" id="CircleShape2D_c34js"]
+radius = 114.0
 
 [node name="levelOne" type="Node2D"]
 script = ExtResource("1_owl27")
@@ -96,7 +96,7 @@ layer_0/tile_data = PackedInt32Array(131065, 0, 1, 196601, 0, 1, 131066, 0, 1, 1
 [node name="mainPlayer" parent="." instance=ExtResource("2_8a6ho")]
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(7735, 71)
+position = Vector2(7735, 104)
 collision_layer = 0
 collision_mask = 3
 script = ExtResource("6_adwts")
@@ -115,18 +115,18 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Weight" type="RigidBody2D" parent="." groups=["heavy_weight"]]
-position = Vector2(5836, -236)
+position = Vector2(5769, -254)
 collision_layer = 4
 collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Weight"]
-position = Vector2(2, -35)
-scale = Vector2(4, 4)
-texture = ExtResource("8_drmbd")
+position = Vector2(6, -33)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_c1is1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weight"]
-position = Vector2(2.5, -14.5)
-shape = SubResource("RectangleShape2D_e4ie6")
+position = Vector2(5, -32)
+shape = SubResource("CircleShape2D_5y6hf")
 
 [node name="killzone" parent="." instance=ExtResource("9_iabg2")]
 position = Vector2(1327, 331)
@@ -141,13 +141,13 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Weight2"]
-position = Vector2(-12.5, -14.5)
-scale = Vector2(3, 2.856)
-texture = ExtResource("8_drmbd")
+position = Vector2(-16, -30)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("6_c1is1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weight2"]
-position = Vector2(-15, 0.5)
-shape = SubResource("RectangleShape2D_t4a7m")
+position = Vector2(-15, -27)
+shape = SubResource("CircleShape2D_c34js")
 
 [node name="Parallax" type="Node" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dk3b0e733kltw"]
+[gd_scene load_steps=39 format=3 uid="uid://dk3b0e733kltw"]
 
 [ext_resource type="Script" path="res://Scripts/Alchemist.gd" id="1_40i1n"]
 [ext_resource type="Texture2D" uid="uid://cmxncrwlie4qe" path="res://Art/Alchemist_idle.png" id="2_jk2qc"]
@@ -11,10 +11,12 @@
 [ext_resource type="Script" path="res://Scripts/AlcMoveState.gd" id="5_lvkvo"]
 [ext_resource type="Texture2D" uid="uid://w3dn8bn1jnvx" path="res://Art/Alchemist_run.png" id="5_yohgf"]
 [ext_resource type="Script" path="res://Scripts/AlcJumpState.gd" id="6_7kbl4"]
+[ext_resource type="Texture2D" uid="uid://cupkclwc1pe84" path="res://Art/Alchemist_push.png" id="6_mda01"]
 [ext_resource type="Script" path="res://Scripts/AlcFallState.gd" id="7_l0i2a"]
 [ext_resource type="Texture2D" uid="uid://bnnbq1s2d4nfk" path="res://Sprites/CharModel/str_glow_1.png" id="9_5122l"]
 [ext_resource type="Texture2D" uid="uid://kbox8i6qreo8" path="res://Sprites/CharModel/str_glow_2.png" id="10_heceg"]
 [ext_resource type="Texture2D" uid="uid://1xotd8q55p7e" path="res://Sprites/CharModel/str_glow_3.png" id="11_oxahg"]
+[ext_resource type="AudioStream" uid="uid://4do1h6g3vja3" path="res://Sounds/potion_gulp.mp3" id="16_85lu2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1omh"]
 atlas = ExtResource("2_pos64")
@@ -59,6 +61,14 @@ region = Rect2(64, 0, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_swdcf"]
 atlas = ExtResource("3_ep0lu")
 region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqpld"]
+atlas = ExtResource("6_mda01")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_go1f0"]
+atlas = ExtResource("6_mda01")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2n11j"]
 atlas = ExtResource("3_uv4a6")
@@ -137,6 +147,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_vqpld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_go1f0")
+}],
+"loop": true,
+"name": &"push",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_2n11j")
 }],
 "loop": false,
@@ -195,7 +216,8 @@ script = ExtResource("1_40i1n")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_tikkg")
-animation = &"transition"
+animation = &"push"
+frame_progress = 0.356813
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -241,5 +263,18 @@ z_index = -1
 sprite_frames = SubResource("SpriteFrames_8eiyb")
 animation = &"non_str"
 autoplay = "non_str"
+
+[node name="PotionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_85lu2")
+
+[node name="RayR" type="RayCast2D" parent="."]
+scale = Vector2(1.5, 1.5)
+target_position = Vector2(80, -0.667)
+collision_mask = 4
+
+[node name="RayL" type="RayCast2D" parent="."]
+scale = Vector2(1.5, 1.5)
+target_position = Vector2(-80, -0.667)
+collision_mask = 4
 
 [connection signal="timeout" from="StrTimer" to="." method="_on_str_timer_timeout"]
