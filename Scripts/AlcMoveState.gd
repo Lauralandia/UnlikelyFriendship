@@ -3,6 +3,8 @@ extends AlcState
 @export var fall_state: AlcState
 @export var idle_state: AlcState
 @export var jump_state: AlcState
+@onready var ray_r = $"../../RayR"
+@onready var ray_l = $"../../RayL"
 
 func process_input(event: InputEvent) -> AlcState:
 	if Input.is_action_just_pressed('jump') and parent.is_on_floor():
@@ -26,6 +28,9 @@ func process_physics(delta: float) -> AlcState:
 	parent.move_and_slide()
 	
 	if parent.str_active == true:
+		if (ray_l.is_colliding() or ray_r.is_colliding()) and (Input.is_action_pressed('move_left') or Input.is_action_pressed('move_right')):
+			if parent.animated_sprite.get_animation() != "push":
+				parent.animated_sprite.play("push")
 		for i in parent.get_slide_collision_count():
 			var c = parent.get_slide_collision(i)
 			if c.get_collider() is RigidBody2D:

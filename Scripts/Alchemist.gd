@@ -8,6 +8,9 @@ extends CharacterBody2D
 @onready var assassin_cam = $"../Assassin/Camera2D"
 @onready var str_timer = $StrTimer
 @onready var str_sprite = $Str_Sprite
+@onready var potion_sound = $PotionSound
+@onready var ray_r = $RayR
+@onready var ray_l = $RayL
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -23,6 +26,7 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("skill_one") && str_timer.time_left == 0:
 		animated_sprite.play("drink_str")
+		potion_sound.play()
 		await(get_tree().create_timer(0.5).timeout)
 		str_active = true
 		str_sprite.visible = true
