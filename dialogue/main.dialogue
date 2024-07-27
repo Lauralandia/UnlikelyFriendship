@@ -1,0 +1,122 @@
+~ opening_scene
+
+# alchemist house, cauldron brewing. we see alchemist with umbra, an awkward, shadowy henchman who lurks about being semi-helpful and making weird grunts.
+Alchemist: Ah yes, and just a half pinch of wolf's bane... a dash of witch's wart and two teaspoons of cumin. Mmm yes. This might be our best brew yet, Umbra!
+
+# door knock sfx, umbra answers it
+KNOCK, KNOCK, KNOCK
+
+Umbra: (unintelligible gargling sounds)
+Alchemist: The snail mail is here? Oh, goodie! I do love mail. I wasn't even expecting anything! Bring it here, bring it here! Hmm, what's this? 
+# fade to scroll/ parchment
+Scroll: If life eternal you hope to find, come to the cave at half past five. The Eternabloem tales are true, and your fate is awaiting you.
+Alchemist: Huzzah! You hear that, Umbra?  I told you that I was on to something with those books I was reading last moon. Oh, a real Eternabloem, can you imagine? The time! Umbra, quick, there's no time to waste!
+Umbra: (unintellible gargling sounds)
+Alchemist: Soup night will have to wait, Umbra! It's already after five. We need to get to the cave now!
+# leaving/transition to the cave entrance umbra makes a sound of disapproval
+Alchemist: Don't be ridiculous. If the Eternabloem is in there, we're going in. Now hurry up, before someone beats us to it!
+# cut to the inside the cave. Hard to see, dark but you can see umbra and alchemist when there's a loud thud.
+Alchemist: What?! Who goes there?!
+# umbra disappears, assassin emerges
+Alchemist: Agha- what are you doing here? [Gasp] Are you coming for the Eternabloem?!
+Assassin: ...No. I don't think so.
+# cave starts to shake and crashes, big splosions much panic much worry, rocks/cave crashes
+
+
+=> END
+
+~ level_1_start
+
+Alchemist: Wait! Where did Umbra go? On no! He was trapped inside! His poor little body must have been crushed in all that rubble. Poor, poor Umbra. I guess this means I'll have to put out a help wanted ad and I can-
+# tingling bell sound in the far distance
+Assassin: Sure did, I am standing directly beside you. It means something to you?
+Alchemist: That's Umbra's stress bell. I'd recognize it anywhere!
+Assassin: ... So, he's not in the cave? It looks like there was a struggle out here though, look at these marks.
+Alchemist: Egat! Someone has kidnapped Umbra! The letter for the Eternabloem must have been a dastardly plot...
+Assassin: I'm still not sure what that is, but if you need help finding your weird shadow cat gremlin thing, I can help. I'm quick and great at tracking.
+Alchemist: Yes, there's not a moment to lose!
+Assassin: ...Wrong way.
+# narration and so the two unlikely companions began their journey to find the lost soul, leaning on the other for their skills and talents, the ultimate quest and test.
+
+=> END
+
+~ level_2_start
+
+# bell tingling
+Alchemist: Oh, we might be getting closer! Hear it?
+Assassin: Still, right next to you... Just keep moving...
+
+=> END
+
+~ level_2_end
+
+Alchemist: Hmm.. Umbra wasn't in there. I was sure he would have picked a nice stump to curl up in...
+# bell tingling
+Assassin: (Sighing) Of course. Keep up with me... I think it's coming from that abandoned building over there.
+
+# narration: and the tingling sound of hope for Umbra's return was in fact just outside of their reach. A final test of the unexpected friendship that had blossomed in trying times.
+
+=> END
+
+~ level_3_start
+
+# bell tingling
+Assassin: Stay close. Whoever took your cat thing is going to be in here. We need to be prepared for anything.
+
+=> END
+
+~ level_3_end
+
+# end of the level
+Alchemist: Well... he has to be in here. It's pretty much a deadend.
+Assassin: Ah yes, because surely there's nothing lurking inside that's going to make us regret going in.
+Alchemist: That's the spirit! I was beginning to worry that you were a killjoy.
+
+# start of the boss fight, bag in the middle, but it's a decoy
+Alchemist: Umbra! Hang in there little guy! H-uh?
+
+# umbra enters, dramatic
+Alchemist: Umbra!! You're okay! You're- you're... you're not very kidnapped, it would seem.
+Assassin: Oh, nothing gets past you.
+# sfx
+Umbra: (Unintelligible gargling sounds)
+Alchemist: What? A plan?
+Assassin: Wait, you can understand him?
+Alchemist: Of course I can. didn't everyone take Undying languages of the Shadow Realms as an extracurricular?
+Assassin: ...Moving on. What did Umbrella Say?
+Alchemist: Right. He said that of course he isn't kidnapped, but that he had to improvise his plan when we managed to escape the caves.
+Assassin: Managed to escape? So he's responsible for that explosion?
+Umbra: (unintelligible gargling sounds - excited and dastardly)
+Alchemist: No..no! No!
+Assassin: (annoyed) Translation, please!
+Alchemist: Right. He says that he did blow up the caves because he couldn't count on you to take me out - that's quite rude - and so you became collateral damage. Unfortunately we managed to work together and escape. You really put a hit out on me?
+Umbra: (Blergh - nod)
+Assassin: That's news to me.
+Umbra: (angrily, arms waving)
+Alchemist: He says he sent you a scroll and you were at the cave. How is that news?
+Assassin: Ohhh! Is that what it said? I honestly could not read most of it and was hoping to figure things out as I went along. That's on me.
+Umbra: (even more angry sounds and flailing about)
+Alchemist: Oh, he is quite annoyed with that remark. He's been working on his penmanship for a few months...
+Assassin: I see...so, what is it that he was trying to get me to...y'know... give you that big sleep.
+Umbra: (animatedly)
+Alchemist: He says it is because I sealed my fate and deserve it twice over. I threw away his treasured 'spon-spon'?
+Umbra: (garble garble)
+Alchemist: Sponge.
+Assassin: Throwing away a sponge was going to be grounds for your end - and mine?!
+Umbra: (garble)
+Alchemist: It was his favorite.
+# Umbra is (angry/excited, drinks potion)
+Alchemist: Ohh but he's done talking he says. Time for revenge!
+
+
+=> END
+
+~ final_boss_fight
+
+Assassin: So, planning to... return the favor?
+Alchemist: You mean... Bless no! I'll just go and do a little wipe of his memories and trim of his nails and everything should be fine again.
+Assassin: I..do not understand you.
+Alchemist: But we work so well together!
+# umbra still captured gargling in disappointment
+
+=> END
