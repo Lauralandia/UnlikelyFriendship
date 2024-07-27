@@ -1,14 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://kya8oissfhsq"]
+[gd_scene load_steps=17 format=3 uid="uid://kya8oissfhsq"]
 
-[ext_resource type="Script" path="res://Scripts/level_one.gd" id="1_owl27"]
 [ext_resource type="PackedScene" uid="uid://dop3vw5fgx8yq" path="res://Scenes/main_player.tscn" id="2_8a6ho"]
-[ext_resource type="Texture2D" uid="uid://b0053hv5mor3t" path="res://Art/Background/Cave_outside_sky_bg.png" id="2_yix6w"]
-[ext_resource type="Texture2D" uid="uid://2ho7mayqxe2y" path="res://Art/Background/Cave_outside_rocks_fg.png" id="3_tc81c"]
 [ext_resource type="Texture2D" uid="uid://bti2cu7fnbwuq" path="res://Art/TilemapMaster.png" id="4_knlia"]
 [ext_resource type="Script" path="res://Scripts/DoorTrigger.gd" id="6_adwts"]
 [ext_resource type="Texture2D" uid="uid://cu1iwpa13o64d" path="res://Art/Rock.png" id="6_c1is1"]
+[ext_resource type="Texture2D" uid="uid://3qhr5dke8koy" path="res://Art/Background_cave.png" id="7_ns2qt"]
 [ext_resource type="PackedScene" uid="uid://dh4or5f6nnouc" path="res://Scenes/pause_menu.tscn" id="7_rpu5m"]
+[ext_resource type="Texture2D" uid="uid://docvxrya3ve85" path="res://Art/Assassin.png" id="8_fp5t3"]
 [ext_resource type="PackedScene" uid="uid://bipykb5h0gmvh" path="res://Scenes/killzone.tscn" id="9_iabg2"]
+[ext_resource type="Texture2D" uid="uid://pv7m8sq810kp" path="res://Art/Alchemist.png" id="9_pf5em"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6b78x"]
 texture = ExtResource("4_knlia")
@@ -84,8 +84,12 @@ radius = 141.014
 [sub_resource type="CircleShape2D" id="CircleShape2D_c34js"]
 radius = 114.0
 
+[sub_resource type="LabelSettings" id="LabelSettings_0tce0"]
+font_size = 20
+outline_size = 20
+outline_color = Color(0.00392157, 0.00392157, 0.00392157, 0.690196)
+
 [node name="levelOne" type="Node2D"]
-script = ExtResource("1_owl27")
 
 [node name="Forest_Tilemap" type="TileMap" parent="."]
 position = Vector2(17, 2)
@@ -152,34 +156,90 @@ shape = SubResource("CircleShape2D_c34js")
 [node name="Parallax" type="Node" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Parallax"]
-scroll_base_scale = Vector2(1, 0)
-
-[node name="Sky" type="ParallaxLayer" parent="Parallax/ParallaxBackground"]
-z_index = -2
-position = Vector2(302, -29)
-scale = Vector2(0.4, 0.4)
-motion_scale = Vector2(0.2, 0)
-
-[node name="TextureRect" type="TextureRect" parent="Parallax/ParallaxBackground/Sky"]
-offset_left = -1460.0
-offset_right = 23035.0
-offset_bottom = 1080.0
-texture = ExtResource("2_yix6w")
-stretch_mode = 1
 
 [node name="Rocks" type="ParallaxLayer" parent="Parallax/ParallaxBackground"]
 z_index = -1
-position = Vector2(300, -0.999996)
-scale = Vector2(0.4, 0.4)
+position = Vector2(737, -4.76837e-07)
+scale = Vector2(2.5, 2.5)
 motion_scale = Vector2(0.5, 0)
 
 [node name="TextureRect" type="TextureRect" parent="Parallax/ParallaxBackground/Rocks"]
-offset_left = -1462.0
-offset_top = 543.0
-offset_right = 23037.0
-offset_bottom = 1623.0
-texture = ExtResource("3_tc81c")
+offset_left = -379.0
+offset_top = -31.0
+offset_right = 3424.0
+offset_bottom = 289.0
+texture = ExtResource("7_ns2qt")
 stretch_mode = 1
+
+[node name="Lvl1DialogueTree" type="Node" parent="."]
+
+[node name="Tutorial" type="Node2D" parent="."]
+
+[node name="Text" type="Node2D" parent="Tutorial"]
+
+[node name="Jump" type="Label" parent="Tutorial/Text"]
+offset_left = 838.0
+offset_top = -142.0
+offset_right = 1050.0
+offset_bottom = -100.0
+text = "SPACE to jump"
+label_settings = SubResource("LabelSettings_0tce0")
+
+[node name="assassin" type="TextureRect" parent="Tutorial/Text"]
+offset_left = 2648.0
+offset_top = -178.0
+offset_right = 2712.0
+offset_bottom = -114.0
+texture = ExtResource("8_fp5t3")
+
+[node name="Dash" type="Label" parent="Tutorial/Text"]
+offset_left = 2580.0
+offset_top = -104.0
+offset_right = 2792.0
+offset_bottom = -17.0
+text = "SHIFT to dash"
+label_settings = SubResource("LabelSettings_0tce0")
+horizontal_alignment = 1
+
+[node name="assassin2" type="TextureRect" parent="Tutorial/Text"]
+offset_left = 3539.0
+offset_top = 89.0
+offset_right = 3603.0
+offset_bottom = 153.0
+texture = ExtResource("8_fp5t3")
+
+[node name="Walljump" type="Label" parent="Tutorial/Text"]
+offset_left = 3638.0
+offset_top = 103.0
+offset_right = 3860.0
+offset_bottom = 182.0
+text = "A,D keys toward wall 
+and SPACE to walljump"
+label_settings = SubResource("LabelSettings_0tce0")
+
+[node name="alchemist" type="TextureRect" parent="Tutorial/Text"]
+offset_left = 5460.0
+offset_top = -109.0
+offset_right = 5524.0
+offset_bottom = -45.0
+texture = ExtResource("9_pf5em")
+
+[node name="Swap" type="Label" parent="Tutorial/Text"]
+offset_left = 5534.0
+offset_top = -93.0
+offset_right = 5641.0
+offset_bottom = -51.0
+text = "Q to swap      +"
+label_settings = SubResource("LabelSettings_0tce0")
+
+[node name="pushobjects" type="Label" parent="Tutorial/Text"]
+offset_left = 5705.0
+offset_top = -105.0
+offset_right = 5954.0
+offset_bottom = -26.0
+text = "1 to drink strength potion
+to push heavy objects"
+label_settings = SubResource("LabelSettings_0tce0")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

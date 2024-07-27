@@ -141,20 +141,24 @@ texture = ExtResource("1_1r3nm")
 position = Vector2(-460, 280)
 scale = Vector2(5.14063, 5.14063)
 sprite_frames = SubResource("SpriteFrames_k3uwo")
-animation = &"idle"
+animation = &"running"
+frame_progress = 0.740497
 
 [node name="Umbra" type="AnimatedSprite2D" parent="Assets"]
 position = Vector2(106, 327)
 scale = Vector2(3.73438, 3.73438)
 sprite_frames = SubResource("SpriteFrames_xkgea")
-animation = &"idle"
-frame = 1
-frame_progress = 0.460837
+animation = &"run"
+frame_progress = 0.67441
 flip_h = true
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Assets"]
 position = Vector2(106, 327)
 scale = Vector2(3.73438, 3.73438)
 stream = ExtResource("7_4jy8a")
+
+[node name="Camera2D" type="Camera2D" parent="Assets"]
+position = Vector2(0, 79.635)
+zoom = Vector2(0.75, 0.75)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
