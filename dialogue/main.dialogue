@@ -1,3 +1,10 @@
+~ start
+
+Name: this is a test
+Someone: this is another test
+
+=> END
+
 ~ opening_scene
 
 # alchemist house, cauldron brewing. we see alchemist with umbra, an awkward, shadowy henchman who lurks about being semi-helpful and making weird grunts.
@@ -37,6 +44,34 @@ Assassin: I'm still not sure what that is, but if you need help finding your wei
 Alchemist: Yes, there's not a moment to lose!
 Assassin: ...Wrong way.
 # narration and so the two unlikely companions began their journey to find the lost soul, leaning on the other for their skills and talents, the ultimate quest and test.
+
+=> END
+
+~ jump_tutorial
+
+Assassin: This is a jump that anyone can make
+Alchemist: I feel as though that's a targeted comment.
+
+=> END
+
+~ dash_tutorial
+
+Alchemist: I think I'll let you have this one.
+Assassin: Exactly, you leave a professional jump to a professional - me
+
+=> END
+
+~ walljump_tutorial
+
+Alchemist: Perhaps there's a stairwell around here...
+Assassin: Wrong again, just let me handle this, okay?
+
+=> END
+
+~ push_tutorial
+
+Assassin: Huh. Seems like this is a bit beyond my range. Might need to find a way around.
+Alchemist: No, now you step back while I show you how the professionals work.
 
 => END
 

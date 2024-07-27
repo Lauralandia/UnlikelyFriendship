@@ -169,7 +169,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ppkxv"]
 size = Vector2(46, 89)
 
-[node name="Assassin" type="CharacterBody2D"]
+[node name="Assassin" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 collision_mask = 5
 floor_max_angle = 1.0472
