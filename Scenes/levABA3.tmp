@@ -365,5 +365,3 @@ visible = false
 offset_right = 1161.0
 offset_bottom = 1161.0
 color = Color(0, 0, 0, 1)
-
-[node name="dialogue" type="Node" parent="."]
