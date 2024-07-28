@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://yk2nejkt004f"]
+
+[ext_resource type="Texture2D" uid="uid://vaao38g33st0" path="res://Art/Background/Alchemist_Home_Bg.png" id="1_sc6tc"]
+
+[node name="level_zero" type="Node2D"]
+
+[node name="assets" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="assets"]
+offset_right = 1155.0
+offset_bottom = 650.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_sc6tc")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="music" type="AudioStreamPlayer" parent="."]

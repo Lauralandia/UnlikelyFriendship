@@ -18,12 +18,14 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Testscript="*res://Scripts/testscript.gd"
 
 [dialogue_manager]
 
 general/wrap_lines=true
 general/include_character_in_translation_exports=true
 general/include_notes_in_translation_exports=true
+general/states=["DialogueState", "Lvl1DialogueTree", "DialogueEvents", "Actionable", "Testscript"]
 
 [display]
 

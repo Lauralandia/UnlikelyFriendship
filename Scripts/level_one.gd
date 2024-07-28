@@ -33,3 +33,4 @@ func restartLevel():
 	var game_scene = level_one.instantiate()
 	get_parent().add_child(game_scene)
 	Engine.time_scale = 1
+

@@ -33,8 +33,9 @@ Assassin: ...No. I don't think so.
 => END
 
 ~ level_1_start
-
+do debug("start")
 Alchemist: Wait! Where did Umbra go? On no! He was trapped inside! His poor little body must have been crushed in all that rubble. Poor, poor Umbra. I guess this means I'll have to put out a help wanted ad and I can-
+do hello()
 # tingling bell sound in the far distance
 
 Alchemist: Wait! Did you hear that?
