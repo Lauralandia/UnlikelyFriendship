@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://slnost8kvf5"]
+[gd_scene load_steps=7 format=3 uid="uid://slnost8kvf5"]
 
 [ext_resource type="Texture2D" uid="uid://b5t4cfjevsr0x" path="res://Sprites/UI/purple_button_unpressed.png" id="2_x48kh"]
 [ext_resource type="Texture2D" uid="uid://rjjrffsvyli3" path="res://Sprites/UI/purple_button_pressed.png" id="3_35lxb"]
+[ext_resource type="Texture2D" uid="uid://d1qivw4or2p7u" path="res://Art/Splash_screen.png" id="3_cewby"]
+[ext_resource type="AudioStream" uid="uid://cydylifwdl7qx" path="res://Sounds/piratejame.mp3" id="3_flxdl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqkwx"]
 bg_color = Color(0.128894, 0.00427854, 0.100474, 1)
@@ -27,12 +29,10 @@ color = Color(0, 0, 0, 1)
 
 [node name="PanelContainer" type="PanelContainer" parent="ColorRect"]
 layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -425.0
-grow_horizontal = 0
+grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xqkwx")
 
@@ -90,6 +90,7 @@ text = "Settings
 
 [node name="ExitGame" type="TextureButton" parent="ColorRect/PanelContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 8
 texture_normal = ExtResource("2_x48kh")
 texture_pressed = ExtResource("3_35lxb")
 texture_hover = ExtResource("3_35lxb")
@@ -110,3 +111,41 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "Exit Game
 "
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 180.0
+offset_top = -64.0
+offset_right = 599.0
+offset_bottom = 712.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("3_cewby")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -13.0
+offset_right = 234.0
+offset_bottom = 663.0
+color = Color(0.111341, 0.0234706, 0.175001, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 924.0
+offset_top = -24.0
+offset_right = 1178.0
+offset_bottom = 664.0
+color = Color(0.111341, 0.0234706, 0.175001, 1)
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_flxdl")
+volume_db = -20.0
+autoplay = true

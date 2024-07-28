@@ -1,45 +1,52 @@
-~ start
-
-Name: this is a test
-Someone: this is another test
-
-=> END
-
-~ opening_scene
-
+~ opening_scene_1
 # alchemist house, cauldron brewing. we see alchemist with umbra, an awkward, shadowy henchman who lurks about being semi-helpful and making weird grunts.
 Alchemist: Ah yes, and just a half pinch of wolf's bane... a dash of witch's wart and two teaspoons of cumin. Mmm yes. This might be our best brew yet, Umbra!
+=> END
 
+~ opening_scene_2
 # door knock sfx, umbra answers it
 KNOCK, KNOCK, KNOCK
-
 Umbra: (unintelligible gargling sounds)
 Alchemist: The snail mail is here? Oh, goodie! I do love mail. I wasn't even expecting anything! Bring it here, bring it here! Hmm, what's this? 
+=> END
+
+~ opening_scene_3
 # fade to scroll/ parchment
 Scroll: If life eternal you hope to find, come to the cave at half past five. The Eternabloem tales are true, and your fate is awaiting you.
+=> END
+
+~ opening_scene_4
 Alchemist: Huzzah! You hear that, Umbra?  I told you that I was on to something with those books I was reading last moon. Oh, a real Eternabloem, can you imagine? The time! Umbra, quick, there's no time to waste!
 Umbra: (unintellible gargling sounds)
 Alchemist: Soup night will have to wait, Umbra! It's already after five. We need to get to the cave now!
+=> END
+
+~ opening_scene_5
 # leaving/transition to the cave entrance umbra makes a sound of disapproval
 Alchemist: Don't be ridiculous. If the Eternabloem is in there, we're going in. Now hurry up, before someone beats us to it!
 # cut to the inside the cave. Hard to see, dark but you can see umbra and alchemist when there's a loud thud.
+=> END
+
+~ opening_scene_6
+
 Alchemist: What?! Who goes there?!
 # umbra disappears, assassin emerges
 Alchemist: Agha- what are you doing here? [Gasp] Are you coming for the Eternabloem?!
 Assassin: ...No. I don't think so.
 # cave starts to shake and crashes, big splosions much panic much worry, rocks/cave crashes
-
-
 => END
 
 ~ level_1_start
-
+do debug("start")
 Alchemist: Wait! Where did Umbra go? On no! He was trapped inside! His poor little body must have been crushed in all that rubble. Poor, poor Umbra. I guess this means I'll have to put out a help wanted ad and I can-
+
 # tingling bell sound in the far distance
+
+Alchemist: Wait! Did you hear that?
 Assassin: Sure did, I am standing directly beside you. It means something to you?
 Alchemist: That's Umbra's stress bell. I'd recognize it anywhere!
 Assassin: ... So, he's not in the cave? It looks like there was a struggle out here though, look at these marks.
-Alchemist: Egat! Someone has kidnapped Umbra! The letter for the Eternabloem must have been a dastardly plot...
+Alchemist: Egat! Someone has kidnapped Umbra! The letter for the Eternabloem must have been a dastardly ploy...
 Assassin: I'm still not sure what that is, but if you need help finding your weird shadow cat gremlin thing, I can help. I'm quick and great at tracking.
 Alchemist: Yes, there's not a moment to lose!
 Assassin: ...Wrong way.

@@ -24,6 +24,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 general/wrap_lines=true
 general/include_character_in_translation_exports=true
 general/include_notes_in_translation_exports=true
+general/states=["DialogueState", "Lvl1DialogueTree", "DialogueEvents", "Actionable", "Testscript"]
 
 [display]
 
