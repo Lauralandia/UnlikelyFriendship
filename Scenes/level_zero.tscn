@@ -320,10 +320,10 @@ sprite_frames = SubResource("SpriteFrames_v1h3n")
 
 [node name="note" type="TextureRect" parent="assets"]
 visible = false
-offset_left = 43.0
-offset_top = -45.0
-offset_right = 1963.0
-offset_bottom = 1035.0
+offset_left = 61.0
+offset_top = 173.0
+offset_right = 1981.0
+offset_bottom = 1253.0
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("12_3xqjo")
 

@@ -1,6 +1,8 @@
 ~ opening_scene_1
 # alchemist house, cauldron brewing. we see alchemist with umbra, an awkward, shadowy henchman who lurks about being semi-helpful and making weird grunts.
 Alchemist: Ah yes, and just a half pinch of wolf's bane... a dash of witch's wart and two teaspoons of cumin. Mmm yes. This might be our best brew yet, Umbra!
+set GlobalFunc.seq = 2
+set GlobalFunc.d_active = false
 => END
 
 ~ opening_scene_2
@@ -8,23 +10,31 @@ Alchemist: Ah yes, and just a half pinch of wolf's bane... a dash of witch's war
 KNOCK, KNOCK, KNOCK
 Umbra: (unintelligible gargling sounds)
 Alchemist: The snail mail is here? Oh, goodie! I do love mail. I wasn't even expecting anything! Bring it here, bring it here! Hmm, what's this? 
+set GlobalFunc.seq = 4
+set GlobalFunc.d_active = false
 => END
 
 ~ opening_scene_3
 # fade to scroll/ parchment
 Scroll: If life eternal you hope to find, come to the cave at half past five. The Eternabloem tales are true, and your fate is awaiting you.
+set GlobalFunc.seq = 5
+set GlobalFunc.d_active = false
 => END
 
 ~ opening_scene_4
 Alchemist: Huzzah! You hear that, Umbra?  I told you that I was on to something with those books I was reading last moon. Oh, a real Eternabloem, can you imagine? The time! Umbra, quick, there's no time to waste!
 Umbra: (unintellible gargling sounds)
 Alchemist: Soup night will have to wait, Umbra! It's already after five. We need to get to the cave now!
+set GlobalFunc.seq = 6
+set GlobalFunc.d_active = false
 => END
 
 ~ opening_scene_5
 # leaving/transition to the cave entrance umbra makes a sound of disapproval
 Alchemist: Don't be ridiculous. If the Eternabloem is in there, we're going in. Now hurry up, before someone beats us to it!
 # cut to the inside the cave. Hard to see, dark but you can see umbra and alchemist when there's a loud thud.
+set GlobalFunc.seq = 7
+set GlobalFunc.d_active = false
 => END
 
 ~ opening_scene_6
@@ -34,6 +44,8 @@ Alchemist: What?! Who goes there?!
 Alchemist: Agha- what are you doing here? [Gasp] Are you coming for the Eternabloem?!
 Assassin: ...No. I don't think so.
 # cave starts to shake and crashes, big splosions much panic much worry, rocks/cave crashes
+set GlobalFunc.seq = 9
+set GlobalFunc.d_active = false
 => END
 
 ~ level_1_start
