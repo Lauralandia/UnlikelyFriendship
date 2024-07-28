@@ -4,10 +4,12 @@ var level_two =  preload("res://Scenes/level_two.tscn")
 var entered = false
 
 func _on_body_entered(body):
-	entered = true
+	if body.is_in_group("player"):
+		entered = true
 
 func _on_body_exited(body):
-	entered = false
+	if body.is_in_group("player"):
+		entered = false
 	
 func _process(delta):
 	if entered == true:
