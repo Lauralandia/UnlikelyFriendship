@@ -17,12 +17,6 @@ extends Node2D
 @export var dialogue_resource: DialogueResource
 var is_dialogue_ended: DialogueLine
 
-#var open_scene_1 = DialogueManager.show_dialogue_balloon(dialogue_resource, "opening_scene_1")
-#var open_scene_2 = DialogueManager.show_dialogue_balloon(dialogue_resource, "opening_scene_2")
-#var open_scene_3 = DialogueManager.show_dialogue_balloon(dialogue_resource, "opening_scene_3")
-#var open_scene_4 = DialogueManager.show_dialogue_balloon(dialogue_resource, "opening_scene_4")
-#var open_scene_5 = DialogueManager.show_dialogue_balloon(dialogue_resource, "opening_scene_5")
-
 
 func _ready():
 	# play music
@@ -66,9 +60,9 @@ func _process(delta):
 				await(get_tree().create_timer(2).timeout)
 				alchemisthouse.visible = false
 				cavebg.visible = true
-				await(get_tree().create_timer(2).timeout)
+				await(get_tree().create_timer(1).timeout)
 				fade.visible = false
-				await(get_tree().create_timer(2).timeout)
+				await(get_tree().create_timer(1).timeout)
 				umbra.visible = false
 				assassin.visible = true
 				GlobalFunc.d_active = false
@@ -82,6 +76,8 @@ func _process(delta):
 				splosions_2.play()
 				splosions_3.play()
 				fade.visible = true
+				await(get_tree().create_timer(10).timeout)
+				get_tree().change_scene_to_file("res://Scenes/level_one.tscn")
 				
 				
 

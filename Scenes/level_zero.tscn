@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://yk2nejkt004f"]
+[gd_scene load_steps=54 format=3 uid="uid://d0cu1f6ifksxx"]
 
 [ext_resource type="Script" path="res://Scripts/level_zero.gd" id="1_gvouy"]
 [ext_resource type="Texture2D" uid="uid://vaao38g33st0" path="res://Art/Background/Alchemist_Home_Bg.png" id="1_sc6tc"]

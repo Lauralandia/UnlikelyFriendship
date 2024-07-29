@@ -43,13 +43,14 @@ Alchemist: What?! Who goes there?!
 # umbra disappears, assassin emerges
 Alchemist: Agha- what are you doing here? [Gasp] Are you coming for the Eternabloem?!
 Assassin: ...No. I don't think so.
+Assassin: Wha-whoa! Lookout!
 # cave starts to shake and crashes, big splosions much panic much worry, rocks/cave crashes
 set GlobalFunc.seq = 9
 set GlobalFunc.d_active = false
 => END
 
 ~ level_1_start
-do debug("start")
+
 Alchemist: Wait! Where did Umbra go? On no! He was trapped inside! His poor little body must have been crushed in all that rubble. Poor, poor Umbra. I guess this means I'll have to put out a help wanted ad and I can-
 
 # tingling bell sound in the far distance
@@ -63,35 +64,35 @@ Assassin: I'm still not sure what that is, but if you need help finding your wei
 Alchemist: Yes, there's not a moment to lose!
 Assassin: ...Wrong way.
 # narration and so the two unlikely companions began their journey to find the lost soul, leaning on the other for their skills and talents, the ultimate quest and test.
-
+set GlobalFunc.d_active = false
 => END
 
 ~ jump_tutorial
 
 Assassin: This is a jump that anyone can make
 Alchemist: I feel as though that's a targeted comment.
-
+set GlobalFunc.d_active = false
 => END
 
 ~ dash_tutorial
 
 Alchemist: I think I'll let you have this one.
 Assassin: Exactly, you leave a professional jump to a professional - me
-
+set GlobalFunc.d_active = false
 => END
 
 ~ walljump_tutorial
 
 Alchemist: Perhaps there's a stairwell around here...
 Assassin: Wrong again, just let me handle this, okay?
-
+set GlobalFunc.d_active = false
 => END
 
 ~ push_tutorial
 
 Assassin: Huh. Seems like this is a bit beyond my range. Might need to find a way around.
 Alchemist: No, now you step back while I show you how the professionals work.
-
+set GlobalFunc.d_active = false
 => END
 
 ~ level_2_start
@@ -99,7 +100,7 @@ Alchemist: No, now you step back while I show you how the professionals work.
 # bell tingling
 Alchemist: Oh, we might be getting closer! Hear it?
 Assassin: Still, right next to you... Just keep moving...
-
+set GlobalFunc.d_active = false
 => END
 
 ~ level_2_end
@@ -109,14 +110,14 @@ Alchemist: Hmm.. Umbra wasn't in there. I was sure he would have picked a nice s
 Assassin: (Sighing) Of course. Keep up with me... I think it's coming from that abandoned building over there.
 
 # narration: and the tingling sound of hope for Umbra's return was in fact just outside of their reach. A final test of the unexpected friendship that had blossomed in trying times.
-
+set GlobalFunc.d_active = false
 => END
 
 ~ level_3_start
 
 # bell tingling
 Assassin: Stay close. Whoever took your cat thing is going to be in here. We need to be prepared for anything.
-
+set GlobalFunc.d_active = false
 => END
 
 ~ level_3_end
@@ -162,7 +163,7 @@ Alchemist: It was his favorite.
 # Umbra is (angry/excited, drinks potion)
 Alchemist: Ohh but he's done talking he says. Time for revenge!
 
-
+set GlobalFunc.d_active = false
 => END
 
 ~ final_boss_fight
@@ -172,5 +173,5 @@ Alchemist: You mean... Bless no! I'll just go and do a little wipe of his memori
 Assassin: I..do not understand you.
 Alchemist: But we work so well together!
 # umbra still captured gargling in disappointment
-
+set GlobalFunc.d_active = false
 => END

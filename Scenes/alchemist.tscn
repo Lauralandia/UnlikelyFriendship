@@ -183,7 +183,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ouw8"]
-size = Vector2(61, 92.5)
+size = Vector2(45, 92.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8eiyb"]
 animations = [{
@@ -220,7 +220,8 @@ animation = &"push"
 frame_progress = 0.356813
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.5, 2.25)
+visible = false
+position = Vector2(-0.5, 2.25)
 shape = SubResource("RectangleShape2D_3ouw8")
 
 [node name="stateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
