@@ -20,6 +20,9 @@ func process_physics(delta: float) -> AlcState:
 	
 	var movement = Input.get_axis('move_left', 'move_right') * move_speed
 	
+	if GlobalFunc.d_active == true:
+		movement = 0
+	
 	if movement == 0:
 		return idle_state
 	

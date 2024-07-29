@@ -20,8 +20,11 @@ func process_physics(delta: float) -> State:
 		
 	if Input.is_action_just_pressed('move_left') and Input.is_action_just_pressed('move_right'):
 		return idle_state
-	
+
 	var movement = Input.get_axis('move_left', 'move_right') * move_speed
+	
+	if GlobalFunc.d_active == true:
+		movement = 0
 	
 	if movement == 0:
 		return idle_state

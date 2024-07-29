@@ -38,5 +38,3 @@ func _unhandled_input(event: InputEvent) -> void:
 				child.queue_free()
 				new_char.visible = true
 
-
-
