@@ -14,8 +14,6 @@ func _ready():
 	assassin_player.global_position.y = 0
 	assassin_player.global_position.x = 0
 
-
-
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("pause"):
 		pauseMenu()

@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var str_timer = $StrTimer
 @onready var str_sprite = $Str_Sprite
 @onready var potion_sound = $PotionSound
+@onready var jump_sound = $JumpSound
 @onready var ray_r = $RayR
 @onready var ray_l = $RayL
 
