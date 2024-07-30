@@ -3,11 +3,12 @@ extends AlcState
 @export var fall_state: AlcState
 @export var idle_state: AlcState
 @export var move_state: AlcState
-
 @export var jump_force: float = 900.0
+@onready var jump_sound = $"../../JumpSound"
 
 func enter() -> void:
 	super()
+	jump_sound.play()
 	parent.animated_sprite.play("jump")
 	parent.velocity.y = -jump_force
 

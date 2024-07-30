@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dgvkw401feqp7"]
+[gd_scene load_steps=36 format=3 uid="uid://dgvkw401feqp7"]
 
 [ext_resource type="Script" path="res://Scripts/Assassin.gd" id="1_gxmrk"]
 [ext_resource type="Texture2D" uid="uid://bey0fad3q7ry6" path="res://Art/Assassin_dash2.png" id="2_55oqt"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://Scripts/DashState.gd" id="11_4mnx5"]
 [ext_resource type="Script" path="res://Scripts/WallSlideState.gd" id="12_06ag1"]
 [ext_resource type="AudioStream" uid="uid://q7234buo1gn8" path="res://Sounds/dash.wav" id="16_jt5wt"]
+[ext_resource type="AudioStream" uid="uid://devlw7pu2dqge" path="res://Sounds/jump.wav" id="17_23l6a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_osq4o"]
 atlas = ExtResource("2_55oqt")
@@ -173,7 +174,7 @@ size = Vector2(46, 89)
 [node name="Assassin" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 collision_mask = 5
-floor_max_angle = 1.0472
+floor_max_angle = 0.872665
 script = ExtResource("1_gxmrk")
 
 [node name="RayL" type="RayCast2D" parent="."]
@@ -259,3 +260,9 @@ position = Vector2(0, -150)
 [node name="DashSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_jt5wt")
 attenuation = 0.0824695
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_23l6a")
+volume_db = -10.0
+pitch_scale = 1.5
+attenuation = 2.07053
