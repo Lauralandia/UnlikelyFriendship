@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bti2cu7fnbwuq" path="res://Art/TilemapMaster.png" id="2_b066w"]
 [ext_resource type="Resource" uid="uid://cvfbqqru28d68" path="res://dialogue/main.dialogue" id="2_fw3jq"]
 [ext_resource type="AudioStream" uid="uid://t6q1ol1lw15d" path="res://Sounds/Level 3 music.wav" id="4_7nijq"]
-[ext_resource type="AudioStream" uid="uid://c0hsr7feq0mxd" path="res://Sounds/deathsound.wav" id="5_fe7ct"]
+[ext_resource type="AudioStream" uid="uid://sb6h7ufdo003" path="res://Sounds/deathsound1.mp3" id="5_k0e7l"]
 [ext_resource type="Texture2D" uid="uid://bey0fad3q7ry6" path="res://Art/Assassin_dash2.png" id="6_jnblq"]
 [ext_resource type="Texture2D" uid="uid://docvxrya3ve85" path="res://Art/Assassin.png" id="7_lpe0c"]
 [ext_resource type="Texture2D" uid="uid://cgwt8p5s611cj" path="res://Art/Assassin_jump.png" id="8_5kb68"]
@@ -452,7 +452,7 @@ stream = ExtResource("4_7nijq")
 volume_db = -12.923
 
 [node name="deathsound" type="AudioStreamPlayer2D" parent="sounds"]
-stream = ExtResource("5_fe7ct")
+stream = ExtResource("5_k0e7l")
 
 [node name="assets" type="Node2D" parent="."]
 
