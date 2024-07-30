@@ -24,4 +24,6 @@ func process_physics(delta: float) -> State:
 	
 	if !parent.is_on_floor():
 		return fall_state		
+	
+	get_parent().get_parent().dashed = false
 	return null

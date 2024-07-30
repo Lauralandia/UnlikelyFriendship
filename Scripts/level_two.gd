@@ -10,7 +10,7 @@ func _ready():
 	#$mainPlayer/Assassin/Camera2D.limit_top = -1900
 	#$mainPlayer/Assassin/Camera2D.limit_right = 1400
 	#$mainPlayer/Assassin/Camera2D.limit_left = -500
-	assassin_player.global_position.y = 0
+	assassin_player.global_position.y = -280
 	assassin_player.global_position.x = 0
 
 func _unhandled_input(event):
@@ -27,7 +27,8 @@ func pauseMenu():
 	paused = !paused
 
 func restartLevel():
-	queue_free()
-	var game_scene = level_two.instantiate()
-	get_parent().add_child(game_scene)
+	#queue_free()
+	#var game_scene = level_two.instantiate()
+	#get_parent().add_child(game_scene)
 	Engine.time_scale = 1
+	get_tree().change_scene_to_file("res://Scenes/level_two.tscn")

@@ -22,6 +22,7 @@ var strength_duration = 5
 var str_active = false
 
 func _ready() -> void:
+	str_sprite.visible = false
 	state_machine.init(self)
 
 func _unhandled_input(event: InputEvent) -> void:

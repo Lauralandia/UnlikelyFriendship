@@ -17,6 +17,7 @@ extends Node2D
 @export var dialogue_resource: DialogueResource
 var is_dialogue_ended: DialogueLine
 
+var level_one =  preload("res://Scenes/level_one.tscn")
 
 func _ready():
 	# play music
@@ -77,9 +78,21 @@ func _process(delta):
 				splosions_3.play()
 				fade.visible = true
 				await(get_tree().create_timer(10).timeout)
-				get_tree().change_scene_to_file("res://Scenes/level_one.tscn")
 				
+				start_level_one()
 				
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("interact"):
+		GlobalFunc.skip_intro = true
+		start_level_one()
+	
+func start_level_one():
+	_0_bgmusic.stop()
+	GlobalFunc.seq = 10
+	GlobalFunc.d_active = false
+	#var game_scene = level_one.instantiate()
+	#add_child(game_scene)
+	get_tree().change_scene_to_file("res://Scenes/level_one.tscn")
 
 #func play_scene_1():
 
@@ -127,3 +140,7 @@ func _process(delta):
 	#splosions_3.play()
 	#fade.visible = true
 	# go to level 1
+
+
+
+

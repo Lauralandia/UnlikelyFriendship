@@ -211,7 +211,7 @@ animations = [{
 [node name="Alchemist" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 collision_mask = 5
-floor_max_angle = 1.0472
+floor_max_angle = 0.872665
 script = ExtResource("1_40i1n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -261,11 +261,12 @@ one_shot = true
 [node name="Str_Sprite" type="AnimatedSprite2D" parent="."]
 z_index = -1
 sprite_frames = SubResource("SpriteFrames_8eiyb")
-animation = &"str"
+animation = &"non_str"
 autoplay = "non_str"
 
 [node name="PotionSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_85lu2")
+volume_db = -3.0
 
 [node name="RayR" type="RayCast2D" parent="."]
 scale = Vector2(1.5, 1.5)

@@ -5,20 +5,25 @@ extends State
 @export var move_state: State
 @export var dash_state: State
 @export var wall_slide_state: State
-
+@onready var jump_sound = $"../../JumpSound"
 @export var jump_force: float = 900.0
 
 func enter() -> void:
 	super()
+	jump_sound.play()
 	parent.animated_sprite.play("jump")
 	parent.velocity.y = -jump_force
 	
 func process_input(event: InputEvent) -> State:
-	if Input.is_action_just_pressed('dash'):
+	if Input.is_action_just_pressed('dash') && get_parent().get_parent().dashed == false:
+		get_parent().get_parent().dashed = true
 		return dash_state
 	return null
 
 func process_physics(delta: float) -> State:
+	if GlobalFunc.d_active == true:
+		return null
+		
 	parent.velocity.y +=  gravity*delta
 	
 	if parent.velocity.y > 0:
