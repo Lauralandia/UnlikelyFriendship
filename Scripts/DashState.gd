@@ -5,6 +5,7 @@ extends State
 @export var move_state: State
 @export var jump_state: State
 @export var wall_slide_state: State
+@onready var dash_sound = $"../../DashSound"
 
 @export var dash_speed: float = 1500.0
 @onready var dash_timer = $DashTimer
@@ -22,6 +23,7 @@ func process_physics(delta: float) -> State:
 	if is_dashing():
 		dashing_speed = dash_speed
 		parent.animated_sprite.play('dash')
+		dash_sound.play()
 	else:
 		dashing_speed = move_speed
 	var movement = Input.get_axis('move_left', 'move_right') * dashing_speed

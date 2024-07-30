@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dk3b0e733kltw"]
+[gd_scene load_steps=40 format=3 uid="uid://dk3b0e733kltw"]
 
 [ext_resource type="Script" path="res://Scripts/Alchemist.gd" id="1_40i1n"]
 [ext_resource type="Texture2D" uid="uid://cmxncrwlie4qe" path="res://Art/Alchemist_idle.png" id="2_jk2qc"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://kbox8i6qreo8" path="res://Sprites/CharModel/str_glow_2.png" id="10_heceg"]
 [ext_resource type="Texture2D" uid="uid://1xotd8q55p7e" path="res://Sprites/CharModel/str_glow_3.png" id="11_oxahg"]
 [ext_resource type="AudioStream" uid="uid://4do1h6g3vja3" path="res://Sounds/potion_gulp.mp3" id="16_85lu2"]
+[ext_resource type="AudioStream" uid="uid://devlw7pu2dqge" path="res://Sounds/jump.wav" id="18_cu313"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1omh"]
 atlas = ExtResource("2_pos64")
@@ -216,8 +217,7 @@ script = ExtResource("1_40i1n")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_tikkg")
-animation = &"push"
-frame_progress = 0.356813
+animation = &"drink_str"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -261,7 +261,7 @@ one_shot = true
 [node name="Str_Sprite" type="AnimatedSprite2D" parent="."]
 z_index = -1
 sprite_frames = SubResource("SpriteFrames_8eiyb")
-animation = &"non_str"
+animation = &"str"
 autoplay = "non_str"
 
 [node name="PotionSound" type="AudioStreamPlayer2D" parent="."]
@@ -276,5 +276,11 @@ collision_mask = 4
 scale = Vector2(1.5, 1.5)
 target_position = Vector2(-80, -0.667)
 collision_mask = 4
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_cu313")
+volume_db = -10.0
+pitch_scale = 1.5
+attenuation = 2.07051
 
 [connection signal="timeout" from="StrTimer" to="." method="_on_str_timer_timeout"]

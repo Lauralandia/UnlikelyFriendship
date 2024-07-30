@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dgvkw401feqp7"]
+[gd_scene load_steps=35 format=3 uid="uid://dgvkw401feqp7"]
 
 [ext_resource type="Script" path="res://Scripts/Assassin.gd" id="1_gxmrk"]
 [ext_resource type="Texture2D" uid="uid://bey0fad3q7ry6" path="res://Art/Assassin_dash2.png" id="2_55oqt"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://Scripts/FallState.gd" id="10_ep3aq"]
 [ext_resource type="Script" path="res://Scripts/DashState.gd" id="11_4mnx5"]
 [ext_resource type="Script" path="res://Scripts/WallSlideState.gd" id="12_06ag1"]
+[ext_resource type="AudioStream" uid="uid://q7234buo1gn8" path="res://Sounds/dash.wav" id="16_jt5wt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_osq4o"]
 atlas = ExtResource("2_55oqt")
@@ -254,3 +255,7 @@ fall_state = NodePath("../FallState")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -150)
+
+[node name="DashSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_jt5wt")
+attenuation = 0.0824695
