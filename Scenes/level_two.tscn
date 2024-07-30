@@ -9324,7 +9324,6 @@ dialogue_resource = ExtResource("15_8y0ph")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collisionEvents/dialogueEvents"]
 position = Vector2(19.9081, -17.3558)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_rnxf2")
 
 [node name="bellring" type="AudioStreamPlayer2D" parent="collisionEvents/dialogueEvents/CollisionShape2D"]

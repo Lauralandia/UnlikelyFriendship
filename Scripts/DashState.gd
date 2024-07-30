@@ -22,8 +22,7 @@ func process_physics(delta: float) -> State:
 		
 	if is_dashing():
 		dashing_speed = dash_speed
-		parent.animated_sprite.play('dash')
-		dash_sound.play()
+		parent.animated_sprite.play('dash')		
 	else:
 		dashing_speed = move_speed
 	var movement = Input.get_axis('move_left', 'move_right') * dashing_speed
@@ -44,6 +43,7 @@ func process_physics(delta: float) -> State:
 
 func start_dash():
 	if dash_timer.is_stopped:
+		dash_sound.play()
 		dash_timer.wait_time = dash_length
 		dash_timer.start()
 

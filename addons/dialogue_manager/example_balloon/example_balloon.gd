@@ -88,8 +88,8 @@ func _ready() -> void:
 
 func _unhandled_input(_event: InputEvent) -> void:
 	# Only the balloon is allowed to handle input while it's showing
-	get_viewport().set_input_as_handled()
-
+	#get_viewport().set_input_as_handled()
+	pass
 
 func _notification(what: int) -> void:
 	## Detect a change of locale and update the current dialogue line to show the new language
@@ -141,7 +141,7 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 	if dialogue_line.responses.size() > 0: return
 
 	# When there are no response options the balloon itself is the clickable thing
-	get_viewport().set_input_as_handled()
+	#get_viewport().set_input_as_handled()
 
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
 		next(dialogue_line.next_id)

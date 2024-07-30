@@ -12,6 +12,7 @@ const DASH_SPEED = 1000.0
 const JUMP_VELOCITY = -400.0
 @onready var slide_timer = $slide_timer
 
+var dashed = false
 var sliding = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
