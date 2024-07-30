@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://kya8oissfhsq"]
+[gd_scene load_steps=29 format=3 uid="uid://kya8oissfhsq"]
 
 [ext_resource type="Script" path="res://Scripts/level_one.gd" id="1_iyucq"]
 [ext_resource type="PackedScene" uid="uid://dop3vw5fgx8yq" path="res://Scenes/main_player.tscn" id="2_8a6ho"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://3qhr5dke8koy" path="res://Art/Background_cave.png" id="7_ns2qt"]
 [ext_resource type="PackedScene" uid="uid://dh4or5f6nnouc" path="res://Scenes/pause_menu.tscn" id="7_rpu5m"]
 [ext_resource type="Texture2D" uid="uid://docvxrya3ve85" path="res://Art/Assassin.png" id="8_fp5t3"]
+[ext_resource type="AudioStream" uid="uid://sb6h7ufdo003" path="res://Sounds/deathsound1.mp3" id="8_reift"]
 [ext_resource type="PackedScene" uid="uid://dtou25yogx153" path="res://Scenes/actionable.tscn" id="9_gwc11"]
 [ext_resource type="PackedScene" uid="uid://bipykb5h0gmvh" path="res://Scenes/killzone.tscn" id="9_iabg2"]
 [ext_resource type="Texture2D" uid="uid://pv7m8sq810kp" path="res://Art/Alchemist.png" id="9_pf5em"]
@@ -172,6 +173,11 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 shape = SubResource("WorldBoundaryShape2D_a6i1j")
+
+[node name="death_sound" type="AudioStreamPlayer2D" parent="killzone"]
+position = Vector2(-1327, -331)
+stream = ExtResource("8_reift")
+pitch_scale = 1.65
 
 [node name="Weight2" type="RigidBody2D" parent="." groups=["heavy_weight"]]
 position = Vector2(8192, 43)
