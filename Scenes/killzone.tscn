@@ -1,18 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bipykb5h0gmvh"]
+[gd_scene load_steps=2 format=3 uid="uid://bipykb5h0gmvh"]
 
 [ext_resource type="Script" path="res://Scripts/killzone.gd" id="1_bcnj7"]
-[ext_resource type="AudioStream" uid="uid://xppsu0s7s7dh" path="res://Sounds/deathsound2.wav" id="2_mly7u"]
 
 [node name="killzone" type="Area2D"]
 script = ExtResource("1_bcnj7")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.7
-
-[node name="death_sound" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(-1327, -331)
-stream = ExtResource("2_mly7u")
-volume_db = 1.0
-pitch_scale = 1.65
+wait_time = 0.9
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

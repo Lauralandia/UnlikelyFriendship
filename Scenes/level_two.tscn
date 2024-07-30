@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://7kxrh3opb52j"]
+[gd_scene load_steps=36 format=3 uid="uid://7kxrh3opb52j"]
 
 [ext_resource type="Texture2D" uid="uid://0wqv0d3meski" path="res://Sprites/Tilemap/tiles_spritesheet.png" id="1_aeyj7"]
 [ext_resource type="Script" path="res://Scripts/level_two.gd" id="1_tjcb1"]
@@ -17,6 +17,7 @@
 [ext_resource type="Resource" uid="uid://cvfbqqru28d68" path="res://dialogue/main.dialogue" id="15_8y0ph"]
 [ext_resource type="AudioStream" uid="uid://dl8ut4285u3g0" path="res://Sounds/Bell 1.wav" id="16_pihpk"]
 [ext_resource type="AudioStream" uid="uid://j7iq8o3ah5it" path="res://Sounds/random loop 1.wav" id="17_1c58c"]
+[ext_resource type="AudioStream" uid="uid://xppsu0s7s7dh" path="res://Sounds/deathsound2.wav" id="18_t5urv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jl5xh"]
 texture = ExtResource("1_umgxh")
@@ -9334,6 +9335,10 @@ volume_db = 10.0
 stream = ExtResource("17_1c58c")
 volume_db = -5.639
 autoplay = true
+
+[node name="death_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_t5urv")
+pitch_scale = 1.3
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

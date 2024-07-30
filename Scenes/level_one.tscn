@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://kya8oissfhsq"]
+[gd_scene load_steps=29 format=3 uid="uid://kya8oissfhsq"]
 
 [ext_resource type="Script" path="res://Scripts/level_one.gd" id="1_1cv51"]
 [ext_resource type="PackedScene" uid="uid://dop3vw5fgx8yq" path="res://Scenes/main_player.tscn" id="2_8a6ho"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://d1vbvcav1kcts" path="res://Sounds/Bell 2.wav" id="11_br2q3"]
 [ext_resource type="AudioStream" uid="uid://qlmaloowqo6j" path="res://Sounds/catmain.wav" id="14_o5tag"]
 [ext_resource type="Script" path="res://Scripts/testscript.gd" id="15_544iy"]
+[ext_resource type="AudioStream" uid="uid://xppsu0s7s7dh" path="res://Sounds/deathsound2.wav" id="16_dujok"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6b78x"]
 texture = ExtResource("4_knlia")
@@ -140,16 +141,28 @@ offset_bottom = -18.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 996.0
+offset_top = 587.0
+offset_right = 1145.0
+offset_bottom = 641.0
+color = Color(0, 0, 0, 1)
+
 [node name="DisableTut" type="Button" parent="CanvasLayer"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -76.0
-offset_top = -53.0
+offset_left = -155.0
+offset_top = -61.0
+offset_right = -7.0
+offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_colors/font_color = Color(0.423906, 0.00173742, 0.670934, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 1, 1)
 text = "Disable Tutorial"
 
 [node name="Weight" type="RigidBody2D" parent="." groups=["heavy_weight"]]
@@ -347,6 +360,10 @@ script = ExtResource("15_544iy")
 [node name="Bell2" type="AudioStreamPlayer2D" parent="dialogueSFX"]
 stream = ExtResource("11_br2q3")
 volume_db = 10.0
+
+[node name="death_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_dujok")
+pitch_scale = 1.3
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
 [connection signal="body_exited" from="Door" to="Door" method="_on_body_exited"]
