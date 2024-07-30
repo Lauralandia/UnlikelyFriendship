@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://kya8oissfhsq"]
 
-[ext_resource type="Script" path="res://Scripts/level_one.gd" id="1_1cv51"]
+[ext_resource type="Script" path="res://Scripts/level_one.gd" id="1_tebl4"]
 [ext_resource type="PackedScene" uid="uid://dop3vw5fgx8yq" path="res://Scenes/main_player.tscn" id="2_8a6ho"]
 [ext_resource type="Texture2D" uid="uid://bti2cu7fnbwuq" path="res://Art/TilemapMaster.png" id="4_knlia"]
 [ext_resource type="Script" path="res://Scripts/DoorTrigger.gd" id="6_adwts"]
@@ -111,7 +111,7 @@ outline_size = 20
 outline_color = Color(0.00392157, 0.00392157, 0.00392157, 0.690196)
 
 [node name="levelOne" type="Node2D"]
-script = ExtResource("1_1cv51")
+script = ExtResource("1_tebl4")
 
 [node name="Forest_Tilemap" type="TileMap" parent="."]
 position = Vector2(17, 2)
@@ -340,6 +340,7 @@ label_settings = SubResource("LabelSettings_0tce0")
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_o5tag")
 volume_db = -25.0
+autoplay = true
 
 [node name="dialogueSFX" type="Node" parent="."]
 script = ExtResource("15_544iy")
