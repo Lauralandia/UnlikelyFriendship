@@ -45,7 +45,7 @@ func _process(delta):
 				GlobalFunc.d_active = true
 				DialogueManager.show_dialogue_balloon(dialogue_resource, "opening_scene_3")
 				note.visible = true
-				await(get_tree().create_timer(4).timeout)
+				await(get_tree().create_timer(6).timeout)
 				note.visible = false
 			5:
 				GlobalFunc.d_active = true

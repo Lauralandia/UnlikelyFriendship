@@ -19,5 +19,6 @@ func _on_body_entered(body):
 		bell_ring.play()
 
 func _on_body_exited(body):
-	music.play()
+	#music.play()
+	pass
 

@@ -99,38 +99,22 @@ Alchemist: Hmm.. Umbra wasn't in there. I was sure he would have picked a nice s
 # bell tingling
 Assassin: (Sighing) Of course. Keep up with me... I think it's coming from that abandoned building over there.
 # narration: and the tingling sound of hope for Umbra's return was in fact just outside of their reach. A final test of the unexpected friendship that had blossomed in trying times.
-set GlobalFunc.d_active = false
-=> END
-
-~ level_2_c
-# bell tingling
 Assassin: Stay close. Whoever took your cat thing is going to be in here. We need to be prepared for anything.
-set GlobalFunc.d_active = false
-=> END
-
-~ level_2_d
-# end of the level
 Alchemist: Well... he has to be in here. It's pretty much a deadend.
 Assassin: Ah yes, because surely there's nothing lurking inside that's going to make us regret going in.
 Alchemist: That's the spirit! I was beginning to worry that you were a killjoy.
-
+set GlobalFunc.d_active = false
 => END
 
-~ level_2_e
+~ level_3_a
 # start of the boss fight, bag in the middle, but it's a decoy
 Alchemist: Umbra! Hang in there little guy! H-uh?
-
-=> END
-
-~ level_2_f
-# umbra enters, dramatic
 Alchemist: Umbra!! You're okay! You're- you're... you're not very kidnapped, it would seem.
 Assassin: Oh, nothing gets past you.
-# sfx
-
+set GlobalFunc.d_active = false
 => END
 
-~ level_2_g
+~ level_3_b
 Umbra: (Unintelligible gargling sounds)
 Alchemist: What? A plan?
 Assassin: Wait, you can understand him?
@@ -147,10 +131,10 @@ Assassin: That's news to me.
 Umbra: (angrily, arms waving)
 Alchemist: He says he sent you a scroll and you were at the cave. How is that news?
 Assassin: Ohhh! Is that what it said? I honestly could not read most of it and was hoping to figure things out as I went along. That's on me.
-
+set GlobalFunc.d_active = false
 => END
 
-~ level_2_h
+~ level_3_c
 Umbra: (even more angry sounds and flailing about)
 Alchemist: Oh, he is quite annoyed with that remark. He's been working on his penmanship for a few months...
 Assassin: I see...so, what is it that he was trying to get me to...y'know... give you that big sleep.
@@ -161,9 +145,10 @@ Alchemist: Sponge.
 Assassin: Throwing away a sponge was going to be grounds for your end - and mine?!
 Umbra: (garble)
 Alchemist: It was his favorite.
+set GlobalFunc.d_active = false
 => END
 
-~ level_2_i
+~ level_3_d
 # Umbra is (angry/excited, drinks potion)
 Alchemist: Ohh but he's done talking he says. Time for revenge!
 set GlobalFunc.d_active = false
