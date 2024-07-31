@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dk3b0e733kltw"]
+[gd_scene load_steps=44 format=3 uid="uid://dk3b0e733kltw"]
 
 [ext_resource type="Script" path="res://Scripts/Alchemist.gd" id="1_40i1n"]
 [ext_resource type="Texture2D" uid="uid://cmxncrwlie4qe" path="res://Art/Alchemist_idle.png" id="2_jk2qc"]
@@ -6,16 +6,14 @@
 [ext_resource type="Script" path="res://Scripts/AlcStateMachine.gd" id="3_aonr1"]
 [ext_resource type="Texture2D" uid="uid://cem4q7lp7qy2s" path="res://Art/Alchemist_jump.png" id="3_ep0lu"]
 [ext_resource type="Texture2D" uid="uid://d1j6ad2im8vfi" path="res://Art/Alchemist_fall.png" id="3_prfog"]
-[ext_resource type="Texture2D" uid="uid://b18fjeuvymjk4" path="res://Art/smoke_change.png" id="3_uv4a6"]
 [ext_resource type="Script" path="res://Scripts/AlcIdleState.gd" id="4_0lvq7"]
 [ext_resource type="Script" path="res://Scripts/AlcMoveState.gd" id="5_lvkvo"]
 [ext_resource type="Texture2D" uid="uid://w3dn8bn1jnvx" path="res://Art/Alchemist_run.png" id="5_yohgf"]
 [ext_resource type="Script" path="res://Scripts/AlcJumpState.gd" id="6_7kbl4"]
 [ext_resource type="Texture2D" uid="uid://cupkclwc1pe84" path="res://Art/Alchemist_push.png" id="6_mda01"]
 [ext_resource type="Script" path="res://Scripts/AlcFallState.gd" id="7_l0i2a"]
-[ext_resource type="Texture2D" uid="uid://bnnbq1s2d4nfk" path="res://Sprites/CharModel/str_glow_1.png" id="9_5122l"]
-[ext_resource type="Texture2D" uid="uid://kbox8i6qreo8" path="res://Sprites/CharModel/str_glow_2.png" id="10_heceg"]
-[ext_resource type="Texture2D" uid="uid://1xotd8q55p7e" path="res://Sprites/CharModel/str_glow_3.png" id="11_oxahg"]
+[ext_resource type="Texture2D" uid="uid://4w1h4gw1rl83" path="res://Art/Smoke_animation.png" id="7_txprr"]
+[ext_resource type="Texture2D" uid="uid://x68p88g3d0kl" path="res://Art/STRpot_animation.png" id="14_fmpg2"]
 [ext_resource type="AudioStream" uid="uid://4do1h6g3vja3" path="res://Sounds/potion_gulp.mp3" id="16_85lu2"]
 [ext_resource type="AudioStream" uid="uid://devlw7pu2dqge" path="res://Sounds/jump.wav" id="18_cu313"]
 
@@ -71,9 +69,21 @@ region = Rect2(0, 0, 64, 64)
 atlas = ExtResource("6_mda01")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2n11j"]
-atlas = ExtResource("3_uv4a6")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eq13"]
+atlas = ExtResource("7_txprr")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsqr7"]
+atlas = ExtResource("7_txprr")
+region = Rect2(64, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pp4i"]
+atlas = ExtResource("7_txprr")
+region = Rect2(128, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6evvc"]
+atlas = ExtResource("7_txprr")
+region = Rect2(192, 0, 64, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bvrg0"]
 atlas = ExtResource("5_yohgf")
@@ -158,8 +168,17 @@ animations = [{
 "speed": 10.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2n11j")
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_5eq13")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_nsqr7")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_4pp4i")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_6evvc")
 }],
 "loop": false,
 "name": &"transition",
@@ -186,6 +205,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ouw8"]
 size = Vector2(45, 92.5)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_031n8"]
+atlas = ExtResource("14_fmpg2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ck5o"]
+atlas = ExtResource("14_fmpg2")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6qkl"]
+atlas = ExtResource("14_fmpg2")
+region = Rect2(128, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8eiyb"]
 animations = [{
 "frames": [],
@@ -195,13 +226,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_oxahg")
+"texture": SubResource("AtlasTexture_031n8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_5122l")
+"texture": SubResource("AtlasTexture_6ck5o")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_heceg")
+"texture": SubResource("AtlasTexture_x6qkl")
 }],
 "loop": true,
 "name": &"str",
@@ -260,9 +291,12 @@ one_shot = true
 
 [node name="Str_Sprite" type="AnimatedSprite2D" parent="."]
 z_index = -1
+position = Vector2(2, -18)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_8eiyb")
-animation = &"non_str"
+animation = &"str"
 autoplay = "non_str"
+frame_progress = 0.201567
 
 [node name="PotionSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_85lu2")
