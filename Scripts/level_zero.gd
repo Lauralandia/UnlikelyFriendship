@@ -24,6 +24,9 @@ func _ready():
 	_0_bgmusic.play()
 	GlobalFunc.seq = 1
 	#play_scene_1()
+	alchemist.play("idle")
+	assassin.play("idle")
+	umbra.play('idle')
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -93,54 +96,3 @@ func start_level_one():
 	#var game_scene = level_one.instantiate()
 	#add_child(game_scene)
 	get_tree().change_scene_to_file("res://Scenes/level_one.tscn")
-
-#func play_scene_1():
-
-
-	#DialogueManager.show_dialogue_balloon(dialogue_resource, "opening_scene_1")
-	#_1_knock.play()
-	#DialogueManager.show_dialogue_balloon(dialogue_resource, "opening_scene_2")
-		
-
-	# parchment screen
-	
-	#await(get_tree().create_timer(8).timeout)
-	#note.visible = true
-	#await(get_tree().create_timer(4).timeout)
-	#note.visible = false
-	#print(3)
-	#DialogueManager.show_dialogue_balloon(dialogue_resource, "opening_scene_3")
-	#await(get_tree().create_timer(6).timeout)
-	#print(4)
-	#DialogueManager.show_dialogue_balloon(dialogue_resource, "opening_scene_4")
-	## but what about the soup
-	#await(get_tree().create_timer(4).timeout)
-	#_2_soup.play()
-	## leave to cave
-	#await(get_tree().create_timer(8).timeout)
-	#fade.visible = true
-	#await(get_tree().create_timer(2).timeout)
-	#alchemisthouse.visible = false
-	#cavebg.visible = true
-	#await(get_tree().create_timer(2).timeout)
-	#fade.visible = false
-	#print(5)
-	#DialogueManager.show_dialogue_balloon(dialogue_resource, "opening_scene_5")
-	#await(get_tree().create_timer(4).timeout)
-	## umbra disappears
-	#umbra.visible = false
-	#assassin.visible = true
-	## assassin appears
-	#print(6)
-	#DialogueManager.show_dialogue_balloon(dialogue_resource, "opening_scene_6")
-	# explosions, cave crashes
-	#await(get_tree().create_timer(6).timeout)
-	#splosions.play()
-	#splosions_2.play()
-	#splosions_3.play()
-	#fade.visible = true
-	# go to level 1
-
-
-
-
