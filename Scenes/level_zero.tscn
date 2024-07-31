@@ -356,6 +356,7 @@ position = Vector2(693, 507)
 scale = Vector2(3.09375, 3.26563)
 sprite_frames = SubResource("SpriteFrames_v1h3n")
 animation = &"idle"
+flip_h = true
 
 [node name="note" type="TextureRect" parent="assets"]
 visible = false

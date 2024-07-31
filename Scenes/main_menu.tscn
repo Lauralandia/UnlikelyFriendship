@@ -1,14 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://slnost8kvf5"]
+[gd_scene load_steps=9 format=3 uid="uid://slnost8kvf5"]
 
 [ext_resource type="Texture2D" uid="uid://b5t4cfjevsr0x" path="res://Sprites/UI/purple_button_unpressed.png" id="2_x48kh"]
 [ext_resource type="Texture2D" uid="uid://rjjrffsvyli3" path="res://Sprites/UI/purple_button_pressed.png" id="3_35lxb"]
 [ext_resource type="Texture2D" uid="uid://d1qivw4or2p7u" path="res://Art/Splash_screen.png" id="3_cewby"]
 [ext_resource type="AudioStream" uid="uid://cydylifwdl7qx" path="res://Sounds/piratejame.mp3" id="3_flxdl"]
+[ext_resource type="FontFile" uid="uid://bypxchdxyiwvs" path="res://Art/Kenney Future.ttf" id="5_wvv0t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqkwx"]
 bg_color = Color(0.128894, 0.00427854, 0.100474, 1)
 
 [sub_resource type="Theme" id="Theme_a2kr7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wu80r"]
+font = ExtResource("5_wvv0t")
+font_size = 60
+font_color = Color(0.179291, 0.869883, 0.381024, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
 
 [node name="mainMenu" type="Control"]
 layout_mode = 3
@@ -149,3 +157,16 @@ color = Color(0.111341, 0.0234706, 0.175001, 1)
 stream = ExtResource("3_flxdl")
 volume_db = -20.0
 autoplay = true
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 11.0
+offset_top = 28.0
+offset_right = 11.0
+offset_bottom = 100.0
+grow_horizontal = 2
+text = "Leave this to me"
+label_settings = SubResource("LabelSettings_wu80r")
+horizontal_alignment = 1
