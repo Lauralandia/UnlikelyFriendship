@@ -1,9 +1,9 @@
 [gd_scene load_steps=54 format=3 uid="uid://d0cu1f6ifksxx"]
 
 [ext_resource type="Script" path="res://Scripts/level_zero.gd" id="1_gvouy"]
-[ext_resource type="Texture2D" uid="uid://vaao38g33st0" path="res://Art/Background/Alchemist_Home_Bg.png" id="1_sc6tc"]
 [ext_resource type="Texture2D" uid="uid://bfob8cseg7u8y" path="res://Art/Umbra_idle.png" id="2_nsenu"]
 [ext_resource type="Resource" uid="uid://cvfbqqru28d68" path="res://dialogue/main.dialogue" id="2_rno6m"]
+[ext_resource type="Texture2D" uid="uid://dqd8ig0eu28sb" path="res://Art/Background_alchemistroom.png" id="3_48mk8"]
 [ext_resource type="Texture2D" uid="uid://dhg4cl737cp1l" path="res://Art/Umbra_run.png" id="3_h3s77"]
 [ext_resource type="Texture2D" uid="uid://btmxb2pclf24v" path="res://Art/Alchemist_drink_inv.png" id="3_v1111"]
 [ext_resource type="Texture2D" uid="uid://dh7pn0vkfrh8f" path="res://Art/Umbra_surprised.png" id="4_f3ybb"]
@@ -295,7 +295,7 @@ offset_right = 1155.0
 offset_bottom = 650.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_sc6tc")
+texture = ExtResource("3_48mk8")
 expand_mode = 1
 
 [node name="cavebg" type="TextureRect" parent="bg"]
