@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://d0cu1f6ifksxx"]
+[gd_scene load_steps=58 format=3 uid="uid://d0cu1f6ifksxx"]
 
 [ext_resource type="Script" path="res://Scripts/level_zero.gd" id="1_gvouy"]
 [ext_resource type="Texture2D" uid="uid://bfob8cseg7u8y" path="res://Art/Umbra_idle.png" id="2_nsenu"]
@@ -203,6 +203,14 @@ region = Rect2(0, 0, 64, 64)
 atlas = ExtResource("2_nsenu")
 region = Rect2(64, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6unm"]
+atlas = ExtResource("2_nsenu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0rin"]
+atlas = ExtResource("2_nsenu")
+region = Rect2(64, 0, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_j41ir"]
 atlas = ExtResource("3_h3s77")
 region = Rect2(0, 0, 64, 64)
@@ -234,6 +242,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6unm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0rin")
+}],
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -270,6 +289,14 @@ region = Rect2(0, 0, 64, 64)
 atlas = ExtResource("14_h7614")
 region = Rect2(64, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_44xtu"]
+atlas = ExtResource("14_h7614")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wypyg"]
+atlas = ExtResource("14_h7614")
+region = Rect2(64, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_15cyp"]
 animations = [{
 "frames": [{
@@ -281,6 +308,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44xtu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wypyg")
+}],
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -317,6 +355,7 @@ animation = &"drink inv"
 position = Vector2(693, 507)
 scale = Vector2(3.09375, 3.26563)
 sprite_frames = SubResource("SpriteFrames_v1h3n")
+animation = &"idle"
 
 [node name="note" type="TextureRect" parent="assets"]
 visible = false
@@ -332,6 +371,7 @@ visible = false
 position = Vector2(824, 516)
 scale = Vector2(3.15625, 3.15625)
 sprite_frames = SubResource("SpriteFrames_15cyp")
+animation = &"idle"
 flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
